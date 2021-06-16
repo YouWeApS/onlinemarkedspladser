@@ -1,0 +1,326 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/sites/26/countries?active=true&limit=100&notHidden=true&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 25 Feb 2019 13:27:20 GMT
+      X-Backendserver:
+      - shopclu1web10_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpdGVtcyI6W3siY29kZSI6IkRLIiwiaWQiOjIzOTcsIm5hbWUiOiJEYW5tYXJrIiwic2l0ZUlkIjoyNiwiYWN0aXZlIjp0cnVlLCJ2YXQiOiIyNSIsInNvcnRPcmRlciI6MH0seyJjb2RlIjoiRk8iLCJpZCI6MjQxMCwibmFtZSI6IkbDpnLDuGVybmUiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo3fSx7ImNvZGUiOiJGSSIsImlkIjoyNDEyLCJuYW1lIjoiRmlubGFuZCIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjF9LHsiY29kZSI6IkZSIiwiaWQiOjI0MTMsIm5hbWUiOiJGcmFua3JpZyIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjJ9LHsiY29kZSI6IkRFIiwiaWQiOjI0MTksIm5hbWUiOiJUeXNrbGFuZCIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjR9LHsiY29kZSI6IklTIiwiaWQiOjI0MzYsIm5hbWUiOiJJc2xhbmQiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo2fSx7ImNvZGUiOiJOTyIsImlkIjoyNDk3LCJuYW1lIjoiTm9yZ2UiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo1fSx7ImNvZGUiOiJTRSIsImlkIjoyNTQwLCJuYW1lIjoiU3ZlcmlnZSIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjN9XSwiaGFzTW9yZSI6ZmFsc2UsImNvdW50Ijo4LCJjb3JyZWxhdGlvbklkIjoiZjAyYzFmOGEtYzZmNy00MjFmLWI2YWQtNmYwYjllYjFlZmMwIn0=
+    http_version: 
+  recorded_at: Mon, 25 Feb 2019 13:27:20 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/products/BU_18084
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Mar 2019 12:14:22 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '344'
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":331075,"number":"BU_18084","costPrice":232.0200,"weight":0.0,"pictureLink":"product_images/9788771613018.jpeg","createdDate":"2018-06-25T15:03:42","editedDate":"2018-06-25T15:48:32","stockCount":230,"stockLimit":0,"barCodeNumber":"9788771613018","sortOrder":0,"minBuyAmount":1,"maxBuyAmount":0,"isVariantMaster":false,"variantMasterId":"","salexsCount":0,"modified":true,"minBuyAmountB2B":0,"rateVariants":false,"reviewVariants":false,"isGiftCertificate":false,"typeId":2,"correlationId":"f154172c-f541-46ea-b359-c3943457b19e","salesCount":25}'
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 12:14:22 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/products/331075
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Aspnet-Version:
+      - 4.0.30319
+      Date:
+      - Wed, 20 Mar 2019 12:15:50 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"correlationId":"8c83f5b1-65b9-40c4-a2b3-b42e4cb0da7d","message":"Product
+        with nunmber: 331075 could not be found"}'
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 12:15:50 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/products?barcode=331075
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Mar 2019 12:15:50 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '110'
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[],"hasMore":false,"count":0,"correlationId":"8d865c5f-8c29-4d39-94fa-f5c9ea5a195d"}'
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 12:15:50 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/products/9788771613018
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Aspnet-Version:
+      - 4.0.30319
+      Date:
+      - Wed, 20 Mar 2019 12:17:50 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"correlationId":"0adf1735-e2f4-4326-a48e-bfb0f127fae0","message":"Product
+        with nunmber: 9788771613018 could not be found"}'
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 12:17:51 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/products?barcode=9788771613018
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Mar 2019 12:17:51 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[{"id":331075,"number":"BU_18084","costPrice":232.0200,"weight":0.0,"pictureLink":"product_images/9788771613018.jpeg","createdDate":"2018-06-25T15:03:42","editedDate":"2018-06-25T15:48:32","stockCount":230,"stockLimit":0,"barCodeNumber":"9788771613018","sortOrder":0,"minBuyAmount":1,"maxBuyAmount":0,"isVariantMaster":false,"variantMasterId":"","salexsCount":0,"modified":true,"minBuyAmountB2B":0,"rateVariants":false,"reviewVariants":false,"isGiftCertificate":false,"typeId":2,"salesCount":25}],"hasMore":false,"count":1,"correlationId":"1f11bba1-4a5c-47aa-98c8-8d4309aab97b"}'
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 12:17:51 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/sites/26/shipping-methods/48/countries?limit=100&notHidden=true&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 25 Mar 2019 10:30:02 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 87.72.32.198
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '290'
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpdGVtcyI6W3siaWQiOjIzOTcsImNvZGUiOiJESyIsIm5hbWUiOiJEYW5tYXJrIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjowfSx7ImlkIjoyNDEwLCJjb2RlIjoiRk8iLCJuYW1lIjoiRsOmcsO4ZXJuZSIsInZhdFBlcmNlbnRhZ2UiOjI1LjAsImNvbXBhbnlWYXRQZXJjZW50YWdlIjowLjAsInNvcnRPcmRlciI6N30seyJpZCI6MjQxMiwiY29kZSI6IkZJIiwibmFtZSI6IkZpbmxhbmQiLCJ2YXRQZXJjZW50YWdlIjoyNS4wLCJjb21wYW55VmF0UGVyY2VudGFnZSI6MC4wLCJzb3J0T3JkZXIiOjF9LHsiaWQiOjI0MTMsImNvZGUiOiJGUiIsIm5hbWUiOiJGcmFua3JpZyIsInZhdFBlcmNlbnRhZ2UiOjI1LjAsImNvbXBhbnlWYXRQZXJjZW50YWdlIjowLjAsInNvcnRPcmRlciI6Mn0seyJpZCI6MjQxOSwiY29kZSI6IkRFIiwibmFtZSI6IlR5c2tsYW5kIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjo0fSx7ImlkIjoyNDM2LCJjb2RlIjoiSVMiLCJuYW1lIjoiSXNsYW5kIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjo2fSx7ImlkIjoyNDk3LCJjb2RlIjoiTk8iLCJuYW1lIjoiTm9yZ2UiLCJ2YXRQZXJjZW50YWdlIjoyNS4wLCJjb21wYW55VmF0UGVyY2VudGFnZSI6MC4wLCJzb3J0T3JkZXIiOjV9LHsiaWQiOjI1NDAsImNvZGUiOiJTRSIsIm5hbWUiOiJTdmVyaWdlIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjozfV0sImhhc01vcmUiOmZhbHNlLCJjb3VudCI6OCwiY29ycmVsYXRpb25JZCI6ImY0NjZjZDk4LWI0NDMtNDRlYi05OTBlLWI1YzY3OWZkNzM0ZiJ9
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 10:30:03 GMT
+recorded_with: VCR 4.0.0

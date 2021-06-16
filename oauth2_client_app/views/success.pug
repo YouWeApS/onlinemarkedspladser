@@ -1,0 +1,10 @@
+doctype html
+html
+  body
+    span#token(style="display: none")= token
+    script.
+      var data = {
+        state: 'success',
+        token: document.getElementById('token').innerHTML
+      };
+      window.opener.postMessage(data, '*');

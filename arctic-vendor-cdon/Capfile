@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+# Load DSL and Setup Up Stages
+require 'capistrano/setup'
+require 'capistrano/deploy'
+require 'capistrano/rbenv'
+require 'capistrano/bundler'
+require 'capistrano/scm/git'
+require 'whenever/capistrano'
+
+install_plugin Capistrano::SCM::Git

@@ -1,0 +1,44 @@
+{
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [ "id", "name", "type" ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid"
+      },
+
+      "enabled": {
+        "type": "boolean"
+      },
+
+      "name": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "type": {
+        "type": [null, "string"]
+      },
+
+      "last_synced_at": {
+        "type": [null, "string"],
+        "format": "datetime"
+      },
+
+      "channel": {
+        "type": "object"
+      },
+
+      "config": {
+        "type": "object"
+      },
+
+      "webhooks": {
+        "type": "object"
+      }
+    }
+  }
+}

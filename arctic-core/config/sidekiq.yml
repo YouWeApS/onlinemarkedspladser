@@ -1,0 +1,11 @@
+:concurrency: 3
+production:
+  :concurrency: 10
+:queues:
+  - [product_caches, 10]
+  - [product_matches, 10]
+  - [shadow_products, 5]
+  - webhooks
+  - product_exports
+  - product_import
+  - enable_shadow_products

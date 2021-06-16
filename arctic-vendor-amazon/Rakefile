@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+# rubocop:disable Lint/HandleExceptions
+
+require_relative './lib/amazon'
+
+begin
+  require 'rspec/core/rake_task'
+
+  RSpec::Core::RakeTask.new(:spec)
+
+  task default: :spec
+rescue LoadError
+  # no rspec available
+end
+
+import 'lib/tasks/sync.rake'
+
+desc 'Start application locally'
+task :start do
+  system 'bundle exec foreman start -f Procfile.dev'
+end
+
+# rubocop:enable Lint/HandleExceptions

@@ -1,0 +1,5 @@
+web: bundle exec puma -C config/puma.rb
+db: postgres -D db/postgres
+redis: redis-server
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+cache: memcached

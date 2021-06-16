@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/v1/vendors/shops
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f9587de75e0e4af7cf3b93df799937f2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9772686a-cea2-48e9-846f-0a31d91f712a
+      X-Runtime:
+      - '0.439331'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"collection":[],"dispersal":[{"id":"a70b65e9-8ab5-4d1f-a4db-22eede34a276","auth_config":{"merchant_id":"A2IZEMSP8MNSVK","auth_token":"amzn.mws.e4b41780-4aab-f06c-f2c8-a26fa022ba46"},"collected_at":null,"config":{},"product_parse_config":null}]}'
+    http_version:
+  recorded_at: Fri, 01 Mar 2019 09:57:46 GMT
+recorded_with: VCR 4.0.0

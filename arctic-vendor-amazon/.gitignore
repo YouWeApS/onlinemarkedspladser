@@ -1,0 +1,4 @@
+archive/*
+*.log
+.env
+spec/examples.txt

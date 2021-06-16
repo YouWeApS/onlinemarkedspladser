@@ -1,0 +1,2 @@
+api: bundle exec rerun 'rackup'
+redis: redis-server --port 6380

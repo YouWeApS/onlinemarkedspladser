@@ -1,0 +1,1170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Vendor API",
+    "version": "v1",
+    "description": "Vendor documentation is targeted to developers building vendor integrations to the Arctic project.\n\nAuthenticate with `VENDOR_ID` and `VENDOR_TOKEN`\n"
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    }
+  },
+  "paths": {
+    "/v1/vendors/shops/{shop_id}/products": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        }
+      ],
+      "get": {
+        "summary": "products for dispersal",
+        "tags": [
+          "Products"
+        ],
+        "description": "Additional params:\n\n* `fields`: An exclusive, comma-separeted list of fields to display in the JSON output.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": [
+                {
+                  "brand": null,
+                  "categories": [
+                    {
+                      "group": "Clothing"
+                    }
+                  ],
+                  "color": null,
+                  "count": null,
+                  "description": "Product description",
+                  "dispersed_at": null,
+                  "ean": "c4a1484cc7d5",
+                  "gender": null,
+                  "images": [
+
+                  ],
+                  "manufacturer": null,
+                  "master_sku": null,
+                  "material": null,
+                  "name": "Product 529",
+                  "offer_price": {
+                    "cents": 781,
+                    "currency": "GBP",
+                    "expires_at": null
+                  },
+                  "original_price": {
+                    "cents": 168,
+                    "currency": "GBP",
+                    "expires_at": null
+                  },
+                  "scent": null,
+                  "size": null,
+                  "sku": "35257c60739882d",
+                  "stock_count": 1
+                },
+                {
+                  "brand": null,
+                  "categories": [
+                    {
+                      "group": "Clothing"
+                    }
+                  ],
+                  "color": null,
+                  "count": null,
+                  "description": "Product description",
+                  "dispersed_at": null,
+                  "ean": "c2d22ac9c463",
+                  "gender": null,
+                  "images": [
+                    {
+                      "id": "a96dcaeb-8582-4f22-b75b-99b7af5f587a",
+                      "position": 1,
+                      "url": "http://bit.ly/2SenX6K"
+                    },
+                    {
+                      "id": "e15dd9cb-0403-46e4-bd6d-f147a976ff44",
+                      "position": 2,
+                      "url": "http://bit.ly/2SenX6K"
+                    },
+                    {
+                      "id": "d37af0d1-875b-4772-8539-69d6343461d5",
+                      "position": 3,
+                      "url": "http://bit.ly/2SenX6K"
+                    }
+                  ],
+                  "manufacturer": null,
+                  "master_sku": null,
+                  "material": null,
+                  "name": "Product 530",
+                  "offer_price": {
+                    "cents": 781,
+                    "currency": "GBP",
+                    "expires_at": null
+                  },
+                  "original_price": {
+                    "cents": 168,
+                    "currency": "GBP",
+                    "expires_at": null
+                  },
+                  "scent": null,
+                  "size": null,
+                  "sku": "35389cb911dadf7",
+                  "stock_count": 1
+                }
+              ]
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create/update product for collection",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "required": [
+                "sku",
+                "name"
+              ],
+              "properties": {
+                "sku": {
+                  "type": "string",
+                  "format": "present",
+                  "required": true
+                },
+                "name": {
+                  "type": "string",
+                  "format": "present",
+                  "required": true
+                },
+                "categories": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "original_price": {
+                  "type": "object",
+                  "properties": {
+                    "cents": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "offer_price": {
+                  "type": "object",
+                  "properties": {
+                    "cents": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "expires_at": [
+                      null,
+                      "string"
+                    ]
+                  }
+                },
+                "images": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "remove": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "raw_data": {
+                  "type": "object",
+                  "required": true,
+                  "description": "Raw data as received by the channel formatted as JSON"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Products"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "description": "### Remove a product\n\nTo remove a product from distribution set the `remove` parameter to `true`.\nIf set on a non-existing product, the product will be skipped, otherwise the product will be deleted.\nThis forces a 204 No Content response.\n\n### Time constrained offer prices\n\nIf you want to create a temporary price for the product (e.g. christmas offer) set the `expires_at` to a database formatted datetime and the product's price will automatically change to the last known price without an `expires_at` when the current offer price expires.\n",
+        "responses": {
+          "201": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "brand": null,
+                "categories": [
+                  "a",
+                  1
+                ],
+                "color": null,
+                "count": null,
+                "description": null,
+                "dispersed_at": null,
+                "ean": null,
+                "gender": null,
+                "images": [
+                  {
+                    "id": "b1230e86-8e02-428f-ac35-a7b15f4e2a85",
+                    "position": 1,
+                    "url": "http://google.com?a=b"
+                  }
+                ],
+                "manufacturer": null,
+                "master_sku": null,
+                "material": null,
+                "name": "Black carapace",
+                "offer_price": {
+                  "cents": 100,
+                  "currency": "DKK",
+                  "expires_at": "Mon, 04 Mar 2019 10:22:33 UTC"
+                },
+                "original_price": {
+                  "cents": 200,
+                  "currency": "DKK",
+                  "expires_at": null
+                },
+                "scent": null,
+                "size": null,
+                "sku": "Black+carapace+L",
+                "stock_count": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/products/{sku}": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "sku",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Product SKU"
+        },
+        {
+          "name": "data",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "Product information to update",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "dispersed_at": {
+                "type": "string",
+                "format": "datetime"
+              }
+            }
+          }
+        }
+      ],
+      "patch": {
+        "summary": "update product information",
+        "tags": [
+          "Products"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "brand": null,
+                "categories": [
+                  "1",
+                  "a"
+                ],
+                "color": null,
+                "count": null,
+                "description": "Product description",
+                "dispersed_at": null,
+                "ean": "0003fcbe0a77",
+                "gender": null,
+                "images": [
+
+                ],
+                "manufacturer": null,
+                "master_sku": null,
+                "material": null,
+                "name": "Product 533",
+                "offer_price": {
+                  "cents": 1000,
+                  "currency": "USD",
+                  "expires_at": null
+                },
+                "original_price": {
+                  "cents": 2000,
+                  "currency": "SEK",
+                  "expires_at": null
+                },
+                "scent": null,
+                "size": null,
+                "sku": "3560f28ad23ceba",
+                "stock_count": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/currencies": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "conversion",
+          "in": "body",
+          "type": "array",
+          "required": true,
+          "description": "Currency conversion information",
+          "schema": {
+            "type": "object",
+            "required": [
+              "from_currency",
+              "to_currency",
+              "rate"
+            ],
+            "properties": {
+              "from_currency": {
+                "type": "string"
+              },
+              "to_currency": {
+                "type": "string"
+              },
+              "rate": {
+                "type": "string",
+                "format": "float"
+              }
+            }
+          }
+        }
+      ],
+      "get": {
+        "summary": "list currency conversions",
+        "tags": [
+          "Currencies"
+        ],
+        "description": "List available currency exchange rates.\nIf the dispersal vendor requires a currency that's not here it will use the European Centran Bank for the most recent currency conversion.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": [
+                {
+                  "id": "dd51cbdf-b937-4130-a53e-6a51525dfbb9",
+                  "from_currency": "DKK",
+                  "rate": 0.2,
+                  "to_currency": "GBP"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update/create currency conversions",
+        "tags": [
+          "Currencies"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "id": "2812ae71-ef3f-422d-a829-c7195434a4af",
+                "from_currency": "DKK",
+                "rate": 1.0,
+                "to_currency": "GBP"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/orders/{order_id}/order_lines/statuses": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "order_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Order ID"
+        }
+      ],
+      "get": {
+        "summary": "Possible order line statuses",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": [
+                "created",
+                "shipped",
+                "invoiced",
+                "completed"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/orders/{order_id}/order_lines/{id}": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "order_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Order ID"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Order line ID"
+        },
+        {
+          "name": "order_line",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "Order line information",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "track_and_trance_reference": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "cents_with_vat": {
+                "type": "integer"
+              },
+              "cents_without_vat": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      ],
+      "patch": {
+        "summary": "Update order line",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "id": "bd81e650-ca1c-4259-af0f-be27bee86f2e",
+                "cents_with_vat": 12000,
+                "cents_without_vat": 10000,
+                "product_id": "362aee068f022dc",
+                "quantity": 1,
+                "status": "created",
+                "track_and_trace_reference": "b8e28816af4e4b855a0efa035109c342"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/orders": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        }
+      ],
+      "post": {
+        "summary": "Create new order",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "id": "3eace350-a9e4-472b-b131-4b88a811a690",
+                "billing_address": {
+                  "id": "ecde3228-5fe0-4a60-975e-c708cdde6eac",
+                  "address1": "Somewhere 1",
+                  "address2": null,
+                  "city": "Copenhagen",
+                  "country": "DK",
+                  "email": "bob@builder.com",
+                  "name": "Bob The Builder",
+                  "phone": "+4512345678",
+                  "region": null,
+                  "zip": "1234"
+                },
+                "currency": "CAD",
+                "order_id": "AZ1",
+                "order_lines": [
+                  {
+                    "id": "595496aa-e1b8-4591-b1ee-e269faf63f18",
+                    "cents_with_vat": 12000,
+                    "cents_without_vat": 10000,
+                    "product_id": "36418cc1f33a040",
+                    "quantity": 1,
+                    "status": "created",
+                    "track_and_trace_reference": null
+                  }
+                ],
+                "payment_fee": "1.11",
+                "payment_reference": "abcdef123",
+                "purchased_at": "Mon, 18 Feb 2019 10:22:39 UTC",
+                "receipt_id": null,
+                "shipping_address": {
+                  "id": "d11e986b-4ca4-475a-99e3-5c04db8c1f39",
+                  "address1": "Somewhere else 2",
+                  "address2": null,
+                  "city": "Copenhagen",
+                  "country": "DK",
+                  "email": "bob@builder.com",
+                  "name": "Bob The Builder",
+                  "phone": "+4512345678",
+                  "region": null,
+                  "zip": "1234"
+                },
+                "shipping_fee": "2.22",
+                "status": [
+                  "created"
+                ],
+                "total": "123.33",
+                "total_without_vat": "103.33",
+                "vat": 25.0,
+                "vendor_id": "9db910c8-98e7-4611-b412-637f5d9658a1"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "List orders",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": [
+                {
+                  "id": "774372f6-95bd-440a-a992-bf1b3925c41c",
+                  "billing_address": {
+                    "id": "ff8843db-5138-46ae-9633-2abfe24ceea6",
+                    "address1": "5607 Jean Plains",
+                    "address2": "Suite 307",
+                    "city": "Lake Madiemouth",
+                    "country": "MR",
+                    "email": "franciscoskiles@dickilebsack.biz",
+                    "name": "Gale Jacobson",
+                    "phone": "(832) 642-3021",
+                    "region": null,
+                    "zip": "68470-3060"
+                  },
+                  "currency": "DKK",
+                  "order_id": "Order+27",
+                  "order_lines": [
+                    {
+                      "id": "443a7763-785a-4e87-b46b-df1462e52368",
+                      "cents_with_vat": 12000,
+                      "cents_without_vat": 10000,
+                      "product_id": "3665072c81819ee",
+                      "quantity": 1,
+                      "status": "created",
+                      "track_and_trace_reference": "95981122ee1f8de222dc91f8a9dd77ad"
+                    },
+                    {
+                      "id": "bef31ca4-1e58-4e5b-b963-d7d3aea2c2d7",
+                      "cents_with_vat": 12000,
+                      "cents_without_vat": 10000,
+                      "product_id": "3665072c81819ee",
+                      "quantity": 1,
+                      "status": "shipped",
+                      "track_and_trace_reference": "799f92e02409c0cf62f889d0e1dacb3f"
+                    },
+                    {
+                      "id": "87abb7da-cb2d-40c7-bdeb-0baa407c4bae",
+                      "cents_with_vat": 12000,
+                      "cents_without_vat": 10000,
+                      "product_id": "3665072c81819ee",
+                      "quantity": 1,
+                      "status": "invoiced",
+                      "track_and_trace_reference": "c2dabb054833e5a9ad0517a7df67be7b"
+                    },
+                    {
+                      "id": "03a15cd6-9eca-4745-ba62-4a276d7c1aae",
+                      "cents_with_vat": 12000,
+                      "cents_without_vat": 10000,
+                      "product_id": "3665072c81819ee",
+                      "quantity": 1,
+                      "status": "completed",
+                      "track_and_trace_reference": "05979bc316206070430bcb125290d9ba"
+                    }
+                  ],
+                  "payment_fee": "0.00",
+                  "payment_reference": null,
+                  "purchased_at": "Mon, 18 Feb 2019 10:22:39 UTC",
+                  "receipt_id": null,
+                  "shipping_address": {
+                    "id": "e4e02dc6-26b2-47b9-a24b-546faef142fb",
+                    "address1": "2202 Majorie Meadow",
+                    "address2": "Apt. 203",
+                    "city": "Shanelburgh",
+                    "country": "AW",
+                    "email": "deltamosciski@brown.name",
+                    "name": "Mrs. Eduardo Runolfsdottir",
+                    "phone": "708.723.5437",
+                    "region": null,
+                    "zip": "94947"
+                  },
+                  "shipping_fee": "0.00",
+                  "status": [
+                    "created",
+                    "shipped",
+                    "invoiced",
+                    "completed"
+                  ],
+                  "total": "480.00",
+                  "total_without_vat": "400.00",
+                  "vat": 25.0,
+                  "vendor_id": "984266e0-231a-4ecb-977a-de0131c0b525"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/orders/{id}": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Order ID"
+        },
+        {
+          "name": "order",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "Order information",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "receipt_id": {
+                "type": "string"
+              },
+              "track_and_trace_reference": {
+                "type": "string"
+              },
+              "currency": {
+                "type": "string"
+              },
+              "payment_fee": {
+                "type": "string"
+              },
+              "shipping_fee": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "patch": {
+        "summary": "Update order",
+        "description": "### Track and trace reference\n\nWhile the order it self does not contain track and trace references, because it's the most common usage to ship all items in an order at the same time, we expose the option to PATCH the track_and_trace_reference on the order, which will update ALL order lines' status to \"shipped\" and set the track_and_trace_reference on each of them.\n",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "id": "ab136b74-f2bd-4f82-8117-b72c50920fc7",
+                "billing_address": {
+                  "id": "41b1b8fb-89e3-485e-b0b7-ac7350486715",
+                  "address1": "52187 Rosamaria Shore",
+                  "address2": "Suite 548",
+                  "city": "New Jamelburgh",
+                  "country": "MH",
+                  "email": "lucila@herman.com",
+                  "name": "Rich Corwin",
+                  "phone": "856.169.3797",
+                  "region": null,
+                  "zip": "70231-9963"
+                },
+                "currency": "SEK",
+                "order_id": "Order+26",
+                "order_lines": [
+                  {
+                    "id": "6ad13d7e-4da9-4026-a259-05e945c12cd0",
+                    "cents_with_vat": 12000,
+                    "cents_without_vat": 10000,
+                    "product_id": "365847de49d0a32",
+                    "quantity": 1,
+                    "status": "shipped",
+                    "track_and_trace_reference": "hhhh123"
+                  },
+                  {
+                    "id": "8b3e29dc-30b3-49ef-ba82-46cd5aaeb18f",
+                    "cents_with_vat": 12000,
+                    "cents_without_vat": 10000,
+                    "product_id": "365847de49d0a32",
+                    "quantity": 1,
+                    "status": "shipped",
+                    "track_and_trace_reference": "hhhh123"
+                  },
+                  {
+                    "id": "743ed0d9-0343-4dd7-b695-54a9b04d8b53",
+                    "cents_with_vat": 12000,
+                    "cents_without_vat": 10000,
+                    "product_id": "365847de49d0a32",
+                    "quantity": 1,
+                    "status": "shipped",
+                    "track_and_trace_reference": "hhhh123"
+                  },
+                  {
+                    "id": "e271ef2a-fd69-4b0d-8abf-0b0b9ecbc1ac",
+                    "cents_with_vat": 12000,
+                    "cents_without_vat": 10000,
+                    "product_id": "365847de49d0a32",
+                    "quantity": 1,
+                    "status": "shipped",
+                    "track_and_trace_reference": "hhhh123"
+                  }
+                ],
+                "payment_fee": "8.88",
+                "payment_reference": null,
+                "purchased_at": "Mon, 18 Feb 2019 10:22:39 UTC",
+                "receipt_id": "abcdef123",
+                "shipping_address": {
+                  "id": "8b62bba9-1a51-4c5c-916b-1446a497df80",
+                  "address1": "21290 Jenkins Lake",
+                  "address2": "Suite 767",
+                  "city": "Port Joanniemouth",
+                  "country": "VU",
+                  "email": "carmenweinat@brown.info",
+                  "name": "Bryan Fay",
+                  "phone": "810.015.1572",
+                  "region": null,
+                  "zip": "32482-1171"
+                },
+                "shipping_fee": "9.99",
+                "status": [
+                  "shipped"
+                ],
+                "total": "498.87",
+                "total_without_vat": "418.87",
+                "vat": 25.0,
+                "vendor_id": "6d1f1767-7c4d-44fd-860e-c59f1867b067"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{shop_id}/products/{sku}/errors": {
+      "parameters": [
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        },
+        {
+          "name": "sku",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Product SKU"
+        },
+        {
+          "name": "error",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "Product error information",
+          "schema": {
+            "type": "object",
+            "requires": [
+              "message",
+              "details"
+            ],
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "details": {
+                "type": "string"
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "warning"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "post": {
+        "summary": "add error to products",
+        "tags": [
+          "Products"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops": {
+      "get": {
+        "summary": "collection and dispersal shops",
+        "tags": [
+          "Shops"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+                "collection": [
+                  {
+                    "id": "5f962d0b-f844-4d49-baa2-3a9f63a257b3",
+                    "auth_config": {
+                      "password": "secret"
+                    },
+                    "collected_at": null,
+                    "config": {
+                    },
+                    "product_parse_config": {
+                    }
+                  }
+                ],
+                "dispersal": [
+                  {
+                    "id": "2b0eec05-2631-4113-9104-e316993c4122",
+                    "auth_config": {
+                      "password": "secret"
+                    },
+                    "collected_at": null,
+                    "config": {
+                    },
+                    "product_parse_config": {
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{id}/products_synced": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        }
+      ],
+      "patch": {
+        "summary": "Report when the vendor completed its run for this shop",
+        "tags": [
+          "Shops"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vendors/shops/{id}/orders_synced": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Shop ID"
+        }
+      ],
+      "patch": {
+        "summary": "Report when the vendor completed its run for this shop",
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success",
+            "examples": {
+              "application/json": {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

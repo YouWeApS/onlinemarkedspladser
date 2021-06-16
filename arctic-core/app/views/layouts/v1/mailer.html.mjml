@@ -1,0 +1,6 @@
+<mjml>
+  <mj-body>
+    == render partial: 'shared/email_header'
+    == yield
+  </mj-body>
+</mjml>

@@ -1,0 +1,6 @@
+:concurrency: 25
+:queues:
+- orders_collection
+- products_dispersal
+- orders_update
+- default

@@ -1,0 +1,63 @@
+{
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [ "id" ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "order_id": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "payment_fee": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "shipping_fee": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "shipping_carrier": {
+        "type": ["string", null]
+      },
+
+      "shipping_method": {
+        "type": ["string", null]
+      },
+
+      "purchased_at": {
+        "type": "string",
+        "format": "datetime"
+      },
+
+      "updated_at": {
+        "type": "string",
+        "format": "datetime"
+      },
+
+      "status": {
+        "type": "array"
+      },
+
+      "track_and_trace_reference": {
+        "type": "array"
+      },
+
+      "payment_reference": {
+        "type": ["string", null]
+      },
+
+      "receipt_id": {
+        "type": [null, "string"]
+      }
+    }
+  }
+}

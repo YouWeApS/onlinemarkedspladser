@@ -1,0 +1,103 @@
+{
+  "type": "array",
+
+  "minItems": 1,
+
+  "items": {
+    "type": "object",
+
+    "required": [
+      "id",
+      "name",
+      "ean",
+      "sku",
+      "master_sku",
+      "match_errors",
+      "last_dispersed_at",
+      "master_id",
+      "created_at",
+      "updated_at",
+      "deleted_at",
+      "dispersal_state",
+      "variants",
+      "enabled_for_vendors",
+      "enabled",
+      "images"
+    ],
+
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid"
+      },
+
+      "enabled_for_vendors": {
+        "type": "object"
+      },
+
+      "name": {
+        "type": [null, "string"]
+      },
+
+      "last_dispersed_at": {
+        "type": [null, "datetime"]
+      },
+
+      "ean": {
+        "type": [null, "string"]
+      },
+
+      "sku": {
+        "type": [null, "string"]
+      },
+
+      "master_sku": {
+        "type": [null, "string"]
+      },
+
+      "variants": {
+        "type": [null, "object"]
+      },
+
+      "master_id": {
+        "type": [null, "string"]
+      },
+
+      "match_errors": {
+        "type": ["array"]
+      },
+
+      "dispersal_state": {
+        "type": [null, "string"]
+      },
+
+      "vendor_id": {
+        "type": [null, "string"],
+        "format": "uuid"
+      },
+
+      "deleted_at": {
+        "type": [null, "string"]
+      },
+
+      "updated_at": {
+        "type": [null, "string"]
+      },
+
+      "created_at": {
+        "type": "string",
+        "format": "datetime"
+      },
+
+      "enabled": {
+        "type": "matched",
+        "format": "boolean"
+      },
+
+      "images": {
+        "type": ["array"]
+      }
+
+    }
+  }
+}

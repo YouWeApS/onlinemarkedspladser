@@ -1,0 +1,57 @@
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'archive/**/*'
+    - 'log/**/*'
+    - Guardfile
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Metrics/AbcSize:
+  Max: 17
+
+Metrics/LineLength:
+  Max: 120
+  URISchemes:
+    - http
+    - https
+    - ws
+    - wss
+
+Metrics/CyclomaticComplexity:
+  Max: 7
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/tasks/*.rake'

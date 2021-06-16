@@ -1,0 +1,5 @@
+mj-section
+  mj-column
+    mj-text= t('v1.ui.product_import_mailer.failed.intro', file: @filename)
+
+    mj-text= t('v1.ui.product_import_mailer.failed.retry')

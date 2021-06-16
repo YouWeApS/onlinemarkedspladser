@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://integration-admin.marketplace.cdon.com/api/order/646_753_046
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - api 9041c071-145a-42f5-948a-1fe68b8790cf
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '4274'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Host:
+      - Marketplace Backoffice
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'default-src ''self'' *.google-analytics.com ''unsafe-inline'' ''unsafe-eval'';connect-src
+        ''self'' ws://*; frame-ancestors ''self''; frame-src *.vimeo.com *.youtube.com
+        youtube.com; img-src ''self'' data: *.youtube.com youtube.com *.chart.googleapis.com
+        chart.googleapis.com *.google-analytics.com'
+      Date:
+      - Thu, 29 Nov 2018 17:58:48 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ICB7DQogICAgIk9yZGVyRGV0YWlscyI6IHsNCiAgICAgICJPcmRlcktleSI6ICJkNzBhN2U1My1iMmQ1LTQ4NTgtODU1ZS1lMzkwODZkNTYwMWUtNjQ2NzUzMDQ2IiwNCiAgICAgICJPcmRlcklkIjogNjQ2NzUzMDQ2LA0KICAgICAgIlN0YXRlIjogIlBlbmRpbmciLA0KICAgICAgIlBheW1lbnRTdGF0dXMiOiAiQXdhaXRpbmdQYXltZW50IiwNCiAgICAgICJDcmVhdGVkRGF0ZVV0YyI6ICIyMDE4LTExLTIzVDEzOjE1OjA1LjY4NyIsDQogICAgICAiTGFzdE1vZGlmaWVkRGF0ZVV0YyI6ICIyMDE4LTExLTI3VDEwOjM5OjI4Ljg4IiwNCiAgICAgICJNZXJjaGFudElkIjogImQ3MGE3ZTUzLWIyZDUtNDg1OC04NTVlLWUzOTA4NmQ1NjAxZSIsDQogICAgICAiQ291bnRyeUNvZGUiOiAiU3dlZGVuIiwNCiAgICAgICJDdXJyZW5jeUNvZGUiOiAiU0VLIiwNCiAgICAgICJUb3RhbEFtb3VudCI6IDIwLjAsDQogICAgICAiVG90YWxBbW91bnRFeGNsdWRpbmdWYXQiOiAyMC4wLA0KICAgICAgIlRvdGFsU2FsZXNBbW91bnQiOiA0MC4wLA0KICAgICAgIkhvdXJzUGFzdERlbGl2ZXJ5U2xhIjogMCwNCiAgICAgICJDdXN0b21lckluZm8iOiB7DQogICAgICAgICJDdXN0b21lcklkIjogMCwNCiAgICAgICAgIkVtYWlsQWRkcmVzcyI6ICJhbmRlcnNAYW5kZXJzc29uLmNkb24uY29tIiwNCiAgICAgICAgIlNoaXBwaW5nQWRkcmVzcyI6IHsNCiAgICAgICAgICAiTmFtZSI6ICJBbmRlcnMgQW5kZXJzc29uIiwNCiAgICAgICAgICAiU3RyZWV0QWRkcmVzcyI6ICJEaW4gR2F0YSAxMDAgdHIgNiIsDQogICAgICAgICAgIkNvQWRkcmVzcyI6IG51bGwsDQogICAgICAgICAgIlppcENvZGUiOiAiMjAxIDIzIiwNCiAgICAgICAgICAiQ2l0eSI6ICJNYWxtw7YiLA0KICAgICAgICAgICJDb3VudHJ5IjogIlNFIg0KICAgICAgICB9LA0KICAgICAgICAiQmlsbGluZ0FkZHJlc3MiOiB7DQogICAgICAgICAgIk5hbWUiOiAiQW5kZXJzIEFuZGVyc3NvbiIsDQogICAgICAgICAgIlN0cmVldEFkZHJlc3MiOiAiRGluIEdhdGEgMTAwIHRyIDYiLA0KICAgICAgICAgICJDb0FkZHJlc3MiOiBudWxsLA0KICAgICAgICAgICJaaXBDb2RlIjogIjIwMSAyMyIsDQogICAgICAgICAgIkNpdHkiOiAiTWFsbcO2IiwNCiAgICAgICAgICAiQ291bnRyeSI6ICJTRSINCiAgICAgICAgfSwNCiAgICAgICAgIlBob25lcyI6IHsNCiAgICAgICAgICAiUGhvbmVNb2JpbGUiOiAiIiwNCiAgICAgICAgICAiUGhvbmVXb3JrIjogIiIsDQogICAgICAgICAgIlBob25lSG9tZSI6ICIiDQogICAgICAgIH0sDQogICAgICAgICJTb2NpYWxTZWN1cml0eU51bWJlciI6ICIiDQogICAgICB9LA0KICAgICAgIk9yZGVyUm93cyI6IFsNCiAgICAgICAgew0KICAgICAgICAgICJPcmRlclJvd0lkIjogMSwNCiAgICAgICAgICAiRnVsZmlsbG1lbnRTdGF0dXMiOiAiSW52b2ljZWQiLA0KICAgICAgICAgICJQYXltZW50U3RhdHVzIjogIkF3YWl0aW5nUGF5bWVudCIsDQogICAgICAgICAgIlByb2R1Y3RJZCI6ICJhYmNkZWYxMjMiLA0KICAgICAgICAgICJQcm9kdWN0TmFtZSI6ICJQcm9kdWN0IDEiLA0KICAgICAgICAgICJQcm9kdWN0VHlwZSI6ICJBcnRpY2xlIiwNCiAgICAgICAgICAiUXVhbnRpdHkiOiAxLA0KICAgICAgICAgICJEZWxpdmVyZWRRdWFudGl0eSI6IDEsDQogICAgICAgICAgIkludm9pY2VkUXVhbnRpdHkiOiAxLA0KICAgICAgICAgICJDYW5jZWxsZWRRdWFudGl0eSI6IDAsDQogICAgICAgICAgIlJldHVybmVkUXVhbnRpdHkiOiAwLA0KICAgICAgICAgICJQaWNrZWRRdWFudGl0eSI6IG51bGwsDQogICAgICAgICAgIlByaWNlUGVyVW5pdCI6IDEwLjAsDQogICAgICAgICAgIk9yZGluYXJ5UHJpY2VQZXJVbml0IjogMjAuMCwNCiAgICAgICAgICAiVmF0UGVyVW5pdCI6IDAuMCwNCiAgICAgICAgICAiVmF0UGVyY2VudGFnZSI6IDAuMCwNCiAgICAgICAgICAiUGFja2FnZUlkIjogIjEyMzQiLA0KICAgICAgICAgICJQYWNrYWdlQ2FycmllcklkIjogMiwNCiAgICAgICAgICAiQWRkb25Ub1Byb2R1Y3RJZCI6IG51bGwsDQogICAgICAgICAgIkRlYml0ZWRBbW91bnQiOiAxMC4wLA0KICAgICAgICAgICJDcmVkaXRlZEFtb3VudCI6IDAuMCwNCiAgICAgICAgICAiUGFpZEFtb3VudCI6IDAuMCwNCiAgICAgICAgICAiUmVmdW5kZWRBbW91bnQiOiAwLjAsDQogICAgICAgICAgIk1lcmNoYW50Q2FtcGFpZ25EaXNjb3VudCI6IFtdDQogICAgICAgIH0sDQogICAgICAgIHsNCiAgICAgICAgICAiT3JkZXJSb3dJZCI6IDIsDQogICAgICAgICAgIkZ1bGZpbGxtZW50U3RhdHVzIjogIlBlbmRpbmciLA0KICAgICAgICAgICJQYXltZW50U3RhdHVzIjogIk5vdEFwcGxpY2FibGUiLA0KICAgICAgICAgICJQcm9kdWN0SWQiOiAiaGlqa2xtNDU3IiwNCiAgICAgICAgICAiUHJvZHVjdE5hbWUiOiAiUHJvZHVjdCAyIiwNCiAgICAgICAgICAiUHJvZHVjdFR5cGUiOiAiQXJ0aWNsZSIsDQogICAgICAgICAgIlF1YW50aXR5IjogMSwNCiAgICAgICAgICAiRGVsaXZlcmVkUXVhbnRpdHkiOiAwLA0KICAgICAgICAgICJJbnZvaWNlZFF1YW50aXR5IjogMCwNCiAgICAgICAgICAiQ2FuY2VsbGVkUXVhbnRpdHkiOiAwLA0KICAgICAgICAgICJSZXR1cm5lZFF1YW50aXR5IjogMCwNCiAgICAgICAgICAiUGlja2VkUXVhbnRpdHkiOiBudWxsLA0KICAgICAgICAgICJQcmljZVBlclVuaXQiOiAxMC4wLA0KICAgICAgICAgICJPcmRpbmFyeVByaWNlUGVyVW5pdCI6IDIwLjAsDQogICAgICAgICAgIlZhdFBlclVuaXQiOiAwLjAsDQogICAgICAgICAgIlZhdFBlcmNlbnRhZ2UiOiAwLjAsDQogICAgICAgICAgIlBhY2thZ2VJZCI6IG51bGwsDQogICAgICAgICAgIlBhY2thZ2VDYXJyaWVySWQiOiBudWxsLA0KICAgICAgICAgICJBZGRvblRvUHJvZHVjdElkIjogbnVsbCwNCiAgICAgICAgICAiRGViaXRlZEFtb3VudCI6IDAuMCwNCiAgICAgICAgICAiQ3JlZGl0ZWRBbW91bnQiOiAwLjAsDQogICAgICAgICAgIlBhaWRBbW91bnQiOiAwLjAsDQogICAgICAgICAgIlJlZnVuZGVkQW1vdW50IjogMC4wLA0KICAgICAgICAgICJNZXJjaGFudENhbXBhaWduRGlzY291bnQiOiBbXQ0KICAgICAgICB9DQogICAgICBdLA0KICAgICAgIk9yZGVyTm90aWNlcyI6IFtdLA0KICAgICAgIkludm9pY2VOdW1iZXJzIjogWw0KICAgICAgICAiMTAwMzA3NSINCiAgICAgIF0sDQogICAgICAiVG90YWxWYXQiOiAwLjAsDQogICAgICAiSXNTcGxpdE9yZGVyIjogZmFsc2UNCiAgICB9LA0KICAgICJJbnZvaWNlcyI6IFsNCiAgICAgIHsNCiAgICAgICAgIlJvd3MiOiBbDQogICAgICAgICAgew0KICAgICAgICAgICAgIlRvdGFsUGF5bWVudEFtb3VudCI6IDAuMCwNCiAgICAgICAgICAgICJUb3RhbENyZWRpdE5vdGVBbW91bnQiOiAwLjAsDQogICAgICAgICAgICAiU3RhdHVzIjogIkF3YWl0aW5nUGF5bWVudCIsDQogICAgICAgICAgICAiSW52b2ljZVJvd051bWJlciI6IDEsDQogICAgICAgICAgICAiT3JkZXJSb3dJZCI6IDEsDQogICAgICAgICAgICAiUHJvZHVjdElkIjogImFiY2RlZjEyMyIsDQogICAgICAgICAgICAiUHJvZHVjdE5hbWUiOiAiUHJvZHVjdCAxIiwNCiAgICAgICAgICAgICJQcm9kdWN0VHlwZSI6ICJBcnRpY2xlIiwNCiAgICAgICAgICAgICJRdWFudGl0eSI6IDEsDQogICAgICAgICAgICAiUHJpY2VQZXJVbml0IjogMTAuMCwNCiAgICAgICAgICAgICJWYXRQZXJVbml0IjogMC4wLA0KICAgICAgICAgICAgIlZhdFBlcmNlbnRhZ2UiOiAwLjAsDQogICAgICAgICAgICAiVG90YWxBbW91bnQiOiAxMC4wLA0KICAgICAgICAgICAgIlRvdGFsVmF0IjogMC4wDQogICAgICAgICAgfQ0KICAgICAgICBdLA0KICAgICAgICAiU3RhdHVzIjogIkF3YWl0aW5nUGF5bWVudCIsDQogICAgICAgICJQYXltZW50cyI6IG51bGwsDQogICAgICAgICJJbnZvaWNlTnVtYmVyIjogIjEwMDMwNzUiLA0KICAgICAgICAiTWVyY2hhbnRJZCI6ICJkNzBhN2U1My1iMmQ1LTQ4NTgtODU1ZS1lMzkwODZkNTYwMWUiLA0KICAgICAgICAiT3JkZXJJZCI6IDY0Njc1MzA0NiwNCiAgICAgICAgIkN1c3RvbWVySWQiOiAxLA0KICAgICAgICAiQ3JlYXRlZERhdGVVdGMiOiAiMjAxOC0xMS0yN1QxMDozOToyOC40MDIyNzE1WiIsDQogICAgICAgICJCb29raW5nRGF0ZVV0YyI6ICIyMDE4LTExLTI3VDEwOjM5OjI4LjQwMjI3MTVaIiwNCiAgICAgICAgIlRvdGFsQW1vdW50IjogMTAuMCwNCiAgICAgICAgIlRvdGFsVmF0IjogMC4wLA0KICAgICAgICAiQ3VycmVuY3lDb2RlIjogIlNFSyINCiAgICAgIH0NCiAgICBdDQogIH0NCg==
+    http_version: 
+  recorded_at: Wed, 28 Nov 2018 23:00:00 GMT
+- request:
+    method: post
+    uri: https://integration-admin.marketplace.cdon.com/api/reports
+    body:
+      encoding: UTF-8
+      string: '{:ReportId=>"d4ea173d-bfbc-48f5-b121-60f1a5d35a34", :format=>"json", :filter=>{:CountryCodes=>"Sweden", :PaymentStates=>["2"]}}'
+    headers:
+      Authorization:
+      - api 9041c071-145a-42f5-948a-1fe68b8790cf
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - "application/x-www-form-urlencoded"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1306'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Host:
+      - Marketplace Backoffice
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'default-src ''self'' *.google-analytics.com ''unsafe-inline'' ''unsafe-eval'';connect-src
+        ''self'' ws://*; frame-ancestors ''self''; frame-src *.vimeo.com *.youtube.com
+        youtube.com; img-src ''self'' data: *.youtube.com youtube.com *.chart.googleapis.com
+        chart.googleapis.com *.google-analytics.com'
+      Date:
+      - Mon, 11 Mar 2019 10:42:37 GMT
+    body:
+      string: "{\r\n  \"Orders\": [\r\n    {\r\n      \"OrderID\": \"646_753_046\",\r\n      \"FullfillmentState\": \"Invoiced\",\r\n      \"PaymentState\": \"Paid\",\r\n      \"Created\": \"2019-02-15 11:34:23\",\r\n      \"Channel\": \"Sweden\",\r\n      \"Currency\": \"SEK\",\r\n      \"TotalOrdinaryPrice\": 0.0,\r\n      \"TotalOrdinaryPriceExcludingVAT\": 0.0,\r\n      \"TotalSalesPrice\": 0.0,\r\n      \"TotalSalesPriceExcludingVAT\": 0.0,\r\n      \"HoursPastSLADelivery\": \"NotApplicable\",\r\n      \"CustomerName\": \"Anders Andersson\",\r\n      \"StreetAddress\": \"Din Gata 100 tr 6\",\r\n      \"CoAddress\": null,\r\n      \"ZipCode\": \"201 23\",\r\n      \"City\": \"Malm\xC3\xB6\",\r\n      \"Country\": \"SE\",\r\n      \"MobilePhoneNumber\": \"\",\r\n      \"EmailAddress\": \"anders@andersson.cdon.com\",\r\n      \"SocialSecurityNumber\": \"\",\r\n      \"CustomerId\": \"\",\r\n      \"LastModified\": \"2019-02-27 12:00:46\"\r\n    }\r\n  ],\r\n  \"OrderRows\": [\r\n    {\r\n      \"OrderID\": \"646_753_046\",\r\n      \"OrderRowID\": 1,\r\n      \"SKU\": \"10080\",\r\n      \"FullfillmentState\": \"Invoiced\",\r\n      \"PaymentState\": \"Paid\",\r\n      \"Type\": \"Article\",\r\n      \"Title\": \"Lommer, selvkl\xC3\xA6bende\",\r\n      \"Quantity\": 1,\r\n      \"OrdinaryPrice\": 0.0,\r\n      \"OrdinaryPriceExcludingVAT\": 0.0,\r\n      \"SalePrice\": 0.0,\r\n      \"SalePriceExcludingVAT\": 0.0,\r\n      \"DeliveredQuantity\": 1,\r\n      \"AddonToSKU\": null\r\n    }\r\n  ],\r\n  \"CampaignDiscounts\": []\r\n}"
+    http_version:
+  recorded_at: Mon, 11 Mar 2019 10:42:37 GMT
+recorded_with: VCR 4.0.0

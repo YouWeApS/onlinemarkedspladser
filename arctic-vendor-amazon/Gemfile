@@ -1,0 +1,51 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.5.1'
+
+gem 'activesupport', require: 'active_support/all'
+gem 'amazon_feed_generator', path: 'my_path'
+gem 'bcrypt_pbkdf'
+gem 'dotenv'
+gem 'ed25519'
+gem 'faraday'
+gem 'nokogiri'
+gem 'peddler'
+gem 'rake'
+gem 'redis'
+gem 'rollbar'
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+gem 'whenever'
+
+gem 'arctic-vendor', '~> 2.1', path: 'my_path'
+
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'foreman'
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop'
+  gem 'rerun'
+  gem 'rspec'
+  gem 'rubocop'
+end
+
+group :test do
+  gem 'compare-xml'
+  gem 'devnull'
+  gem 'rspec-its', require: 'rspec/its'
+  gem 'rspec-sidekiq'
+  gem 'timecop'
+  gem 'vcr'
+  gem 'webmock'
+end
+
+group :production do
+  gem 'ddtrace'
+  gem 'dogapi'
+  gem 'dogstatsd-ruby'
+end

@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    targetNamespace="http://schemas.cdon.com/product/2.0/shopping-mall.xsd"
+    attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.cdon.com/product/2.0/shopping-mall.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="moneyType">
+    <xs:annotation>
+      <xs:appinfo>Money Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value='9'/>
+      <xs:fractionDigits value='2'/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="valueTranslationType">
+    <xs:annotation>
+      <xs:appinfo>Brand attribute type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="sv|da|no|nb|fi"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="channelIdType">
+    <xs:annotation>
+      <xs:appinfo>Channel Id Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="SE|NO|DK|FI|se|no|dk|fi"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="productStatusType">
+    <xs:annotation>
+      <xs:appinfo>Product Status Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="ONLINE|OFFLINE|DELETED|online|offline|deleted"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uriType">
+    <xs:annotation>
+      <xs:appinfo>uriType Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="https?://.+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="energyClassType">
+    <xs:annotation>
+      <xs:appinfo>EnergyClass Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="(A\+{1,3}|[A-G])"/>
+    </xs:restriction>
+    </xs:simpleType>
+
+  <xs:simpleType name="productSellableType">
+    <xs:annotation>
+      <xs:appinfo>Product Status Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="TRUE|FALSE|true|false"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exposeStatusType">
+    <xs:annotation>
+      <xs:appinfo>Product Expose Status Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="BUYABLE|BOOKABLE|WATCHABLE|buyable|bookable|watchable"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brandAttributeType">
+    <xs:annotation>
+      <xs:appinfo>Brand attribute type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="BrandName|BrandURL|BrandDescription|BrandImageUrl"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="freightClassType">
+    <xs:annotation>
+      <xs:appinfo>Freight class Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="A|B|C|D|E|F|H|I|J|K|L|a|b|c|d|e|f|h|i|j|k|l|0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string">
+    <xs:minLength value="1"></xs:minLength>
+    <xs:maxLength value="40"></xs:maxLength>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="valueType">
+    <xs:annotation>
+      <xs:appinfo>Value Translations Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="valueTranslationType" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="priceType">
+    <xs:annotation>
+      <xs:appinfo>Value Translations Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="current" type="moneyType" use="required"/>
+    <xs:attribute name="ordinary" type="moneyType" use="required"/>
+    <xs:attribute name="vat" type="xs:decimal" use="required"/>
+    <xs:attribute name="currency" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="deliveryTimeType">
+    <xs:annotation>
+      <xs:appinfo>Delivery time min and max in days</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="min" type="xs:int" use="required"/>
+    <xs:attribute name="max" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="variationAttributeType">
+    <xs:annotation>
+      <xs:appinfo>Value Translations Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="key" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="gtinType">
+    <xs:annotation>
+      <xs:appinfo>gtin Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="manufacturerArtNoType">
+    <xs:annotation>
+      <xs:appinfo>manufacturerArtNo Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="taricNumberType">
+    <xs:annotation>
+      <xs:appinfo>taricNumber Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="releaseDateType">
+    <xs:annotation>
+      <xs:appinfo>releaseDate Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:date" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="pickingLocationType">
+    <xs:annotation>
+      <xs:appinfo>picking Location Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="expectedDeliveryDateType">
+    <xs:annotation>
+      <xs:appinfo>expectedDeliveryDate Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:date" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="dimensionsType">
+    <xs:annotation>
+      <xs:appinfo>dimensions Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="width" type="xs:decimal"/>
+    <xs:attribute name="length" type="xs:decimal"/>
+    <xs:attribute name="height" type="xs:decimal"/>
+    <xs:attribute name="weight" type="xs:decimal"/>
+  </xs:complexType>
+
+  <xs:complexType name="inPriceType">
+    <xs:annotation>
+      <xs:appinfo>inPrice Type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:attribute name="price" type="moneyType"/>
+    <xs:attribute name="currency" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="energyClassificationType">
+    <xs:annotation>
+      <xs:appinfo>Energy Classification Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="energyClassName" minOccurs="1" maxOccurs="1" type="energyClassType" />
+      <xs:element name="energyLabelImage" minOccurs="1" maxOccurs="1" type="uriType" />
+      <xs:element name="energyArrowImage" minOccurs="0" maxOccurs="1" type="uriType" />
+      <xs:element name="energySheetImage" minOccurs="0" maxOccurs="1" type="uriType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productAttributeType">
+    <xs:annotation>
+      <xs:appinfo>ProductAttribute Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="value" minOccurs="1" maxOccurs="unbounded" type="valueType" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="productVariationType">
+    <xs:annotation>
+      <xs:appinfo>Product Variation Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="value" minOccurs="0" maxOccurs="unbounded" type="valueType" />
+      <xs:element name="attribute" minOccurs="0" maxOccurs="unbounded" type="productAttributeType" />
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="channelType">
+    <xs:annotation>
+      <xs:appinfo>Channel Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="price" minOccurs="1" maxOccurs="1" type="priceType"/>
+      <xs:element name="sellable" minOccurs="1" maxOccurs="1" type="productSellableType" />
+      <xs:element name="deliveryTime" minOccurs="0" maxOccurs="1" type="deliveryTimeType" />
+      <xs:element name="freightClass" minOccurs="0" maxOccurs="1" type="freightClassType" />
+    </xs:sequence>
+    <xs:attribute name="iso" type="channelIdType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="salesChannelsType">
+    <xs:annotation>
+      <xs:appinfo>Sales Channels Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="channel" minOccurs="1" maxOccurs="4" type="channelType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="skuType">
+    <xs:annotation>
+      <xs:appinfo>Sku Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="status" minOccurs="1" maxOccurs="1" type="productStatusType" />
+      <xs:element name="exposeStatus" minOccurs="1" maxOccurs="1" type="exposeStatusType" />
+      <xs:element name="inStock" minOccurs="1" maxOccurs="1" type="xs:int" />
+      <xs:element name="gtin" minOccurs="0" maxOccurs="1" type="gtinType" />
+      <xs:element name="manufacturerArtNo" minOccurs="0" maxOccurs="1" type="manufacturerArtNoType" />
+      <xs:element name="supplierArtNo" minOccurs="0" maxOccurs="1" type="manufacturerArtNoType" />
+      <xs:element name="taricNumber" minOccurs="0" maxOccurs="1" type="taricNumberType" />
+      <xs:element name="releaseDate" minOccurs="0" maxOccurs="1" type="releaseDateType" />
+      <xs:element name="expectedDeliveryDate" minOccurs="0" maxOccurs="1" type="expectedDeliveryDateType" />
+      <xs:element name="dimensions" minOccurs="0" maxOccurs="1" type="dimensionsType" />
+      <xs:element name="inPrice" minOccurs="0" maxOccurs="1" type="inPriceType" />
+      <xs:element name="freightClass" minOccurs="0" maxOccurs="1" type="freightClassType" />
+      <xs:element name="energyClassification" minOccurs="0" maxOccurs="1" type="energyClassificationType" />
+      <xs:element name="variation" minOccurs="1" maxOccurs="unbounded" type="variationAttributeType" />
+      <xs:element name="pickingLocation" minOccurs="0" maxOccurs="1" type="pickingLocationType" />
+      <xs:element name="salesChannels" minOccurs="1" maxOccurs="1" type="salesChannelsType" />
+    </xs:sequence>
+    <xs:attribute name="id" use="required" type="idType"/>
+  </xs:complexType>
+
+  <xs:complexType name="productVariationsType">
+    <xs:annotation>
+      <xs:appinfo>Product Variation Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sku" minOccurs="1" maxOccurs="unbounded" type="skuType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="variationType">
+    <xs:annotation>
+      <xs:appinfo>Variation Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="variation" minOccurs="0" maxOccurs="unbounded" type="productVariationType"/>
+    </xs:sequence>
+    <xs:attribute name="attribute" type="xs:string" use="required"/>
+  </xs:complexType>
+
+
+  <xs:complexType name="brandType">
+    <xs:annotation>
+      <xs:appinfo>Brand Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="values" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="attribute" minOccurs="1" maxOccurs="4">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="value" minOccurs="1" maxOccurs="5" type="valueType"/>
+                </xs:sequence>
+                <xs:attribute name="id" use="required" type="brandAttributeType"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="id" type="xs:decimal" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="productType">
+    <xs:annotation>
+      <xs:appinfo>Product Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="class" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="id" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="brand" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="id" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gtin" minOccurs="0" maxOccurs="1" type="gtinType" />
+      <xs:element name="manufacturerArtNo" minOccurs="0" maxOccurs="1" type="manufacturerArtNoType" />
+      <xs:element name="taricNumber" minOccurs="0" maxOccurs="1" type="taricNumberType" />
+      <xs:element name="releaseDate" minOccurs="0" maxOccurs="1" type="releaseDateType" />
+      <xs:element name="expectedDeliveryDate" minOccurs="0" maxOccurs="1" type="expectedDeliveryDateType" />
+      <xs:element name="dimensions" minOccurs="0" maxOccurs="1" type="dimensionsType" />
+      <xs:element name="inPrice" minOccurs="0" maxOccurs="1" type="inPriceType" />
+      <xs:element name="freightClass" minOccurs="0" maxOccurs="1" type="freightClassType" />
+      <xs:element name="energyClassification" minOccurs="0" maxOccurs="1" type="energyClassificationType" />
+      <xs:element name="values" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="attribute" minOccurs="1" maxOccurs="unbounded" type="productAttributeType" />
+            <xs:element name="variations" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="key" minOccurs="1" maxOccurs="unbounded" type="variationType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="productStatus" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="status" minOccurs="1" maxOccurs="1" type="productStatusType" />
+            <xs:element name="externalStatus" minOccurs="0" maxOccurs="1" type="xs:string" />
+            <xs:element name="exposeStatus" minOccurs="1" maxOccurs="1" type="exposeStatusType" />
+            <xs:element name="inStock" minOccurs="1" maxOccurs="1" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deliveryTime" minOccurs="0" maxOccurs="1" type="deliveryTimeType" />
+      <xs:element name="pickingLocation" minOccurs="0" maxOccurs="1" type="pickingLocationType" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element name="productVariations" type="productVariationsType"/>
+        <xs:element name="salesChannels" type="salesChannelsType"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" use="required" type="idType" />
+  </xs:complexType>
+
+
+  <xs:complexType name="brandsType">
+    <xs:annotation>
+      <xs:appinfo>Brands Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="brand" type="brandType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productsType">
+    <xs:annotation>
+      <xs:appinfo>Brands Type.</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="documentsType">
+    <xs:annotation>
+      <xs:appinfo>Documents type</xs:appinfo>
+      <xs:documentation source="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/fieldsDef.html#SFDouble"/>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="brands" type="brandsType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="products" type="productsType" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:element name="cdon_shopping_mall_import">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="documents" type="documentsType" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:decimal" use="required"/>
+      <xs:attribute name="source_id" type="xs:string" use="required"/>
+      <xs:attribute name="import_type" type="xs:string" use="required"/>
+      <xs:attribute name="import_id" type="xs:string" use="required"/>
+      <xs:attribute name="import_date" type="xs:dateTime" use="required"/>
+      <xs:attribute name="import_previous_id" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

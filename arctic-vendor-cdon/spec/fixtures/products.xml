@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<marketplace xmlns="https://schemas.cdon.com/product/4.0/4.1.0/product">
+  <product>
+    <identity>
+      <id>abcdef123</id>
+    </identity>
+    <title>
+      <default>Product 1</default>
+    </title>
+    <description>
+      <default>This is a cool product</default>
+    </description>
+    <category>
+      <cables_network_cables>
+        <network_cable_category>network_cable_category_cat6a</network_cable_category>
+      </cables_network_cables>
+    </category>
+  </product>
+  <product>
+    <identity>
+      <id>hijklm456</id>
+    </identity>
+    <title>
+      <default>Product 2</default>
+    </title>
+    <description>
+      <default>This is another cool product</default>
+    </description>
+    <category>
+      <cables_network_cables>
+        <network_cable_category>network_cable_category_cat6a</network_cable_category>
+      </cables_network_cables>
+    </category>
+    <variants>
+      <variantByColor>
+        <identity>
+          <id>hijklm457</id>
+        </identity>
+        <color>
+          <default>grey</default>
+        </color>
+      </variantByColor>
+    </variants>
+  </product>
+</marketplace>

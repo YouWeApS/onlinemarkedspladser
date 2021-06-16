@@ -1,0 +1,2 @@
+sidekiq: bundle exec rerun 'bundle exec sidekiq -r ./lib/dandomain.rb'
+redis: redis-server --port 6382

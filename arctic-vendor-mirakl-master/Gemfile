@@ -1,0 +1,36 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.7.1'
+
+# TODO: remove
+gem 'rest-client'
+
+gem 'faraday'
+gem 'dotenv'
+gem 'activesupport', require: 'active_support/all'
+gem 'arctic-vendor', path: 'my_path'
+gem 'nokogiri'
+gem 'whenever'
+gem 'rack-console'
+gem 'rake'
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+gem 'whenever'
+
+group :development do
+  gem 'rspec'
+  gem 'rerun'
+  gem 'foreman'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'bundler-audit', require: false
+
+  group :deploy do
+    gem 'capistrano',         require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'ed25519'
+    gem 'bcrypt_pbkdf'
+  end
+end

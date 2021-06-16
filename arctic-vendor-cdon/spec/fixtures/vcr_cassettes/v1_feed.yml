@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://integration-admin.marketplace.cdon.com/api/importfile
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"data\";
+        filename=\"products.xml\"\r\nContent-Length: 2442\r\nContent-Type: application/xml\r\nContent-Transfer-Encoding:
+        binary\r\n\r\n<?xml version=\"1.0\"?>\n<cdon_shopping_mall_import xmlns=\"http://schemas.cdon.com/product/2.0/shopping-mall.xsd\"
+        source_id=\"xxx\" version=\"1\" import_id=\"2\" import_type=\"FULL\" import_date=\"2018-11-21T10:20:46\"
+        import_previous_id=\"1\">\n  <documents>\n    <products>\n      <product id=\"abcdef123\">\n
+        \       <class id=\"Sneakers\"/>\n        <gtin value=\"abcdef123\"/>\n        <manufacturerArtNo
+        value=\"ean-123\"/>\n        <values>\n          <attribute id=\"TITLE\">\n
+        \           <value>Product 1</value>\n          </attribute>\n          <attribute
+        id=\"DESCRIPTION\">\n            <value>This is a cool product</value>\n          </attribute>\n
+        \         <variations>\n            <key attribute=\"\"/>\n          </variations>\n
+        \       </values>\n        <productStatus>\n          <status>ONLINE</status>\n
+        \         <exposeStatus>BUYABLE</exposeStatus>\n          <inStock>1</inStock>\n
+        \       </productStatus>\n        <salesChannels>\n          <channel iso=\"se\">\n
+        \           <price current=\"10.0\" vat=\"25.0\" ordinary=\"20.0\" currency=\"SEK\"/>\n
+        \           <sellable>true</sellable>\n          </channel>\n        </salesChannels>\n
+        \     </product>\n      <product id=\"hijklm456\">\n        <class id=\"Sneakers\"/>\n
+        \       <gtin value=\"hijklm456\"/>\n        <manufacturerArtNo value=\"ean-456\"/>\n
+        \       <values>\n          <attribute id=\"TITLE\">\n            <value>Product
+        2</value>\n          </attribute>\n          <attribute id=\"DESCRIPTION\">\n
+        \           <value>This is another cool product</value>\n          </attribute>\n
+        \         <variations>\n            <key attribute=\"color\">\n              <variation
+        value=\"grey\"/>\n            </key>\n          </variations>\n        </values>\n
+        \       <productStatus>\n          <status>ONLINE</status>\n          <exposeStatus>BUYABLE</exposeStatus>\n
+        \         <inStock>1</inStock>\n        </productStatus>\n        <productVariations>\n
+        \         <sku id=\"hijklm457\">\n            <status>ONLINE</status>\n            <exposeStatus>BUYABLE</exposeStatus>\n
+        \           <inStock>1</inStock>\n            <manufacturerArtNo value=\"ean-789\"/>\n
+        \           <variation key=\"color\" value=\"grey\"/>\n            <salesChannels>\n
+        \             <channel iso=\"se\">\n                <price current=\"10.0\"
+        ordinary=\"20.0\" currency=\"SEK\" vat=\"25.0\"/>\n                <sellable>true</sellable>\n
+        \             </channel>\n            </salesChannels>\n          </sku>\n
+        \       </productVariations>\n      </product>\n    </products>\n  </documents>\n</cdon_shopping_mall_import>\n\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '2672'
+      Authorization:
+      - api 9041c071-145a-42f5-948a-1fe68b8790cf
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '78'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Host:
+      - Marketplace Backoffice
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'default-src ''self'' *.google-analytics.com ''unsafe-inline'' ''unsafe-eval'';connect-src
+        ''self'' ws://*; frame-ancestors ''self''; frame-src *.vimeo.com *.youtube.com
+        youtube.com; img-src ''self'' data: *.youtube.com youtube.com *.chart.googleapis.com
+        chart.googleapis.com *.google-analytics.com'
+      Date:
+      - Wed, 21 Nov 2018 09:20:46 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"ImportId\": \"ccfdf28b8b1a454aaa847534b5a52929\",\r\n  \"ValidationLog\":
+        []\r\n}"
+    http_version: 
+  recorded_at: Wed, 21 Nov 2018 09:20:46 GMT
+- request:
+    method: put
+    uri: https://integration-admin.marketplace.cdon.com/api/importfile?importFileId=ccfdf28b8b1a454aaa847534b5a52929
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - api 9041c071-145a-42f5-948a-1fe68b8790cf
+      User-Agent:
+      - Faraday v0.15.3
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '69'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Host:
+      - Marketplace Backoffice
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'default-src ''self'' *.google-analytics.com ''unsafe-inline'' ''unsafe-eval'';connect-src
+        ''self'' ws://*; frame-ancestors ''self''; frame-src *.vimeo.com *.youtube.com
+        youtube.com; img-src ''self'' data: *.youtube.com youtube.com *.chart.googleapis.com
+        chart.googleapis.com *.google-analytics.com'
+      Date:
+      - Wed, 21 Nov 2018 09:21:52 GMT
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"success\": true,\r\n  \"message\": \"File was queued for process.\"\r\n}"
+    http_version: 
+  recorded_at: Wed, 21 Nov 2018 09:21:52 GMT
+recorded_with: VCR 4.0.0

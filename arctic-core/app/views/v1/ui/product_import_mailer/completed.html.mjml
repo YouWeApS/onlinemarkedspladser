@@ -1,0 +1,3 @@
+mj-section
+  mj-column
+    mj-text= t('v1.ui.product_import_mailer.completed.intro', file: @filename)

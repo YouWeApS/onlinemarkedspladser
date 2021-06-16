@@ -1,0 +1,34 @@
+{
+  "type": "object",
+
+  "required": [
+    "id",
+    "email",
+    "locale"
+  ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "email": {
+      "type": "email"
+    },
+
+    "locale": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "avatar_url": {
+      "type": [null, "string"],
+      "format": "uri"
+    },
+
+    "name": {
+      "type": [null, "string"]
+    }
+  }
+}

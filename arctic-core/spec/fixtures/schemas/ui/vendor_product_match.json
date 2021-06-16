@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [ "id", "matched", "errors" ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "matched": {
+      "type": "matched",
+      "format": "boolean"
+    },
+
+    "errors": {
+      "type": "array"
+    }
+  }
+}

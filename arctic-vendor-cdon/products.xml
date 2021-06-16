@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<cdon_shopping_mall_import xmlns="http://schemas.cdon.com/product/2.0/shopping-mall.xsd" source_id="xxx" version="1" import_id="2" import_type="FULL" import_date="2018-11-19T11:41:08" import_previous_id="1">
+  <documents>
+    <products>
+      <product id="abcdef123">
+        <class id="Sneakers"/>
+        <gtin value="abcdef123"/>
+        <manufacturerArtNo value="ean-123"/>
+        <values>
+          <attribute id="TITLE">
+            <value>Product 1</value>
+          </attribute>
+          <attribute id="DESCRIPTION">
+            <value>This is a cool product</value>
+          </attribute>
+          <variations>
+            <key attribute=""/>
+          </variations>
+        </values>
+        <productStatus>
+          <status>ONLINE</status>
+          <exposeStatus>BUYABLE</exposeStatus>
+          <inStock>1</inStock>
+        </productStatus>
+        <salesChannels>
+          <channel iso="se">
+            <price current="10.0" vat="25.0" ordinary="20.0" currency="SEK"/>
+            <sellable>true</sellable>
+          </channel>
+        </salesChannels>
+      </product>
+      <product id="hijklm456">
+        <class id="Sneakers"/>
+        <gtin value="hijklm456"/>
+        <manufacturerArtNo value="ean-456"/>
+        <values>
+          <attribute id="TITLE">
+            <value>Product 2</value>
+          </attribute>
+          <attribute id="DESCRIPTION">
+            <value>This is another cool product</value>
+          </attribute>
+          <variations>
+            <key attribute="color">
+              <variation value="grey"/>
+            </key>
+          </variations>
+        </values>
+        <productStatus>
+          <status>ONLINE</status>
+          <exposeStatus>BUYABLE</exposeStatus>
+          <inStock>1</inStock>
+        </productStatus>
+        <productVariations>
+          <sku id="hijklm457">
+            <status>ONLINE</status>
+            <exposeStatus>BUYABLE</exposeStatus>
+            <inStock>1</inStock>
+            <manufacturerArtNo value="ean-789"/>
+            <variation key="color" value="grey"/>
+            <pickingLocation value="a"/>
+            <salesChannels>
+              <channel iso="se">
+                <price current="10.0" ordinary="20.0" currency="SEK" vat="25.0"/>
+                <sellable>true</sellable>
+              </channel>
+            </salesChannels>
+          </sku>
+        </productVariations>
+      </product>
+    </products>
+  </documents>
+</cdon_shopping_mall_import>

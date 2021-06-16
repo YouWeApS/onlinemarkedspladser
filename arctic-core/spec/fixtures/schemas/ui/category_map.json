@@ -1,0 +1,35 @@
+{
+  "type": "object",
+
+  "required": [
+    "id",
+    "value",
+    "source",
+    "name",
+    "position"
+  ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "source": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "name": {
+      "type": [null, "string"]
+    },
+
+    "value": {
+      "type": "object"
+    },
+
+    "position": {
+      "type": "number"
+    }
+  }
+}

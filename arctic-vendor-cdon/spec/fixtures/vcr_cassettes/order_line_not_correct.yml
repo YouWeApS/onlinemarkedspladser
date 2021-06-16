@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://integration-admin.marketplace.cdon.com/api/orderdelivery
+    body: '{"OrderId":"1","Products":[{"OrderRowId":"1","QuantityToDeliver":1,"PackageId":"abcdef123"}]}'
+    headers:
+      Authorization:
+      - api hijklm456
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Host:
+      - Marketplace Backoffice
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'default-src ''self'' *.google-analytics.com ''unsafe-inline'' ''unsafe-eval'';connect-src
+        ''self'' ws://*; frame-ancestors ''self''; frame-src *.vimeo.com *.youtube.com
+        youtube.com; img-src ''self'' data: *.youtube.com youtube.com *.chart.googleapis.com
+        chart.googleapis.com *.google-analytics.com'
+      Date:
+      - Thu, 28 Feb 2019 13:49:27 GMT
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: 'TEST ERROR'
+    http_version:
+  recorded_at: Thu, 28 Feb 2019 13:49:25 GMT
+recorded_with: VCR 4.0.0

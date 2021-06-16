@@ -1,0 +1,27 @@
+{
+  "type": "object",
+
+  "required": [ "id", "state", "updated_at", "channel" ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "state": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "updated_at": {
+      "type": "string",
+      "format": "datetime"
+    },
+
+    "channel": {
+      "type": "string",
+      "format": "presence"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+vendor-smartweb: bundle exec rerun 'rackup -p 9292'
+redis: redis-server --port 6382
+sidekiq: bundle exec rerun 'bundle exec sidekiq -r ./lib/smartweb.rb'

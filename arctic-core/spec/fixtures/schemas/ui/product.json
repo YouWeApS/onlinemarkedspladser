@@ -1,0 +1,176 @@
+{
+  "type": "object",
+
+  "required": [
+    "id",
+    "name",
+    "description",
+    "color",
+    "brand",
+    "ean",
+    "manufacturer",
+    "size",
+    "material",
+    "sku",
+    "master_sku",
+    "errors",
+    "preview",
+    "match_errors",
+    "categories",
+    "last_dispersed_at",
+    "master_id",
+    "created_at",
+    "updated_at",
+    "deleted_at",
+    "scent",
+    "count",
+    "gender",
+    "dispersal_state",
+    "variants",
+    "enabled_for_vendors",
+    "enabled"
+  ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "enabled_for_vendors": {
+      "type": "object"
+    },
+
+    "name": {
+      "type": [null, "string"]
+    },
+
+    "last_dispersed_at": {
+      "type": [null, "datetime"]
+    },
+
+    "ean": {
+      "type": [null, "string"]
+    },
+
+    "scent": {
+      "type": [null, "string"]
+    },
+
+    "gender": {
+      "type": [null, "string"]
+    },
+
+    "count": {
+      "type": [null, "integer"]
+    },
+
+    "description": {
+      "type": [null, "string"]
+    },
+
+    "color": {
+      "type": [null, "string"]
+    },
+
+    "brand": {
+      "type": [null, "string"]
+    },
+
+    "manufacturer": {
+      "type": [null, "string"]
+    },
+
+    "size": {
+      "type": [null, "string"]
+    },
+
+    "material": {
+      "type": [null, "string"]
+    },
+
+    "sku": {
+      "type": [null, "string"]
+    },
+
+    "master_sku": {
+      "type": [null, "string"]
+    },
+
+    "errors": {
+      "type": "array"
+    },
+
+    "variants": {
+      "type": [null, "object"]
+    },
+
+    "master_id": {
+      "type": [null, "string"]
+    },
+
+    "match_errors": {
+      "type": "array"
+    },
+
+    "preview": {
+      "type": "object"
+    },
+
+    "dispersal_state": {
+      "type": [null, "string"]
+    },
+
+    "vendor_id": {
+      "type": [null, "string"],
+      "format": "uuid"
+    },
+
+    "original_price": {
+      "type": [null, "object"]
+    },
+
+    "offer_price": {
+      "type": [null, "object"]
+    },
+
+    "deleted_at": {
+      "type": [null, "string"]
+    },
+
+    "updated_at": {
+      "type": [null, "string"]
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "datetime"
+    },
+
+    "categories": {
+      "type": "array"
+    },
+
+    "enabled": {
+      "type": "matched",
+      "format": "boolean"
+    },
+
+    "search_terms": {
+      "type": [null, "string"]
+    },
+
+    "legal_disclaimer": {
+      "type": [null, "string"]
+    },
+
+    "key_features": {
+      "type": ["object", null]
+    },
+
+    "platinum_keywords": {
+      "type": ["object", null]
+    }
+
+  }
+}

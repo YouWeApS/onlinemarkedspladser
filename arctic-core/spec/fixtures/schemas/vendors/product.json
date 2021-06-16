@@ -1,0 +1,106 @@
+{
+  "type": "object",
+  "required": ["sku", "name"],
+  "properties": {
+    "sku": {
+      "type": "string",
+      "format": "present"
+    },
+
+    "name": {
+      "type": "string",
+      "format": "present"
+    },
+
+    "brand": {
+      "type": ["string", null]
+    },
+
+    "manufacturer": {
+      "type": ["string", null]
+    },
+
+    "color": {
+      "type": ["string", null]
+    },
+
+    "size": {
+      "type": ["string", null]
+    },
+
+    "material": {
+      "type": ["string", null]
+    },
+
+    "description": {
+      "type": ["string", null]
+    },
+
+    "gender": {
+      "type": ["string", null]
+    },
+
+    "scent": {
+      "type": ["string", null]
+    },
+
+    "count": {
+      "type": ["string", null]
+    },
+
+    "ean": {
+      "type": ["string", null]
+    },
+
+    "original_price": {
+      "type": [null, "object"]
+    },
+
+    "offer_price": {
+      "type": [null, "object"]
+    },
+
+    "stock_count": {
+      "type": ["integer", null]
+    },
+
+    "dispersed_at": {
+      "type": ["string", null],
+      "format": "datetime"
+    },
+
+    "legal_disclaimer": {
+      "type": ["string", null]
+    },
+
+    "platinum_keywords": {
+      "type": ["object", null]
+    },
+
+    "search_terms": {
+      "type": ["string", null]
+    },
+
+    "key_features": {
+      "type": ["object", null]
+    },
+
+    "master_sku": {
+      "type": ["string", null]
+    },
+
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": ["object", "string", "integer"]
+      }
+    }
+  }
+}

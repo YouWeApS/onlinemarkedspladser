@@ -1,0 +1,29 @@
+{
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "from_currency",
+      "to_currency",
+      "rate"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "from_currency": {
+        "type": "string"
+      },
+      "to_currency": {
+        "type": "string"
+      },
+      "rate": {
+        "type": "number",
+        "format": "float"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+#!/bin/sh -eu
+
+cat <<EOF >> $HOME/.ssh/config
+
+Host *
+  User vendor
+  ForwardAgent yes
+EOF
+
+# Add the preferred key for getting GitHub Permission
+# See https://circleci.com/gh/masutaka/masutaka.net/edit#checkout
+eval $(ssh-agent)
+ssh-add
+
+bundle exec cap production deploy

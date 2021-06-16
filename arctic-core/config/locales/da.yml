@@ -1,0 +1,19 @@
+da:
+  v1:
+    ui:
+      product_export_mailer:
+        send_link:
+          subject: Produkt data eksport klar
+          intro: Her er linket til produkt data eksporten du har forespurgt
+          time_constraint: Linket vil kun være i aktivt i 48 timer. Download filen inden da.
+
+      product_import_mailer:
+        failed:
+          subject: Produkt data import fejler
+          intro: Produkt data import af %{file} fejlede
+          retry: Du kan rette fejlen(e) i filen og prøve igen
+
+        completed:
+          subject: Produkt data import gennemørt
+          intro: Produkt data import af %{file} er gennemført
+

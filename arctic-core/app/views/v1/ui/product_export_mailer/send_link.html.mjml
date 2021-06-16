@@ -1,0 +1,7 @@
+mj-section
+  mj-column
+    mj-text= t('v1.ui.product_export_mailer.send_link.intro')
+
+    mj-text= t('v1.ui.product_export_mailer.send_link.time_constraint')
+
+    mj-button(href="#{@url}") Download product data

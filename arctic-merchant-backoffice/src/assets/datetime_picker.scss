@@ -1,0 +1,7 @@
+.vdp-datepicker {
+  input {
+    @include form-element;
+    background-color: #fff;
+    cursor: default;
+ }
+}

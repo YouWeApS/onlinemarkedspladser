@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "required": [
+    "collection",
+    "dispersal"
+  ],
+  "properties": {
+    "collection": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "auth_config", "config"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "collected_at": {
+            "type": ["string", null]
+          },
+          "auth_config": {
+            "type": "object"
+          },
+          "config": {
+            "type": "object"
+          },
+          "product_parse_config": {
+            "type": [null, "array"]
+          },
+          "shipping_mappings": {
+            "type": [null, "array"]
+          }
+        }
+      }
+    },
+    "dispersal": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "auth_config", "config"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "collected_at": {
+            "type": ["string", null]
+          },
+          "auth_config": {
+            "type": "object"
+          },
+          "config": {
+            "type": "object"
+          },
+          "product_parse_config": {
+            "type": [null, "array"]
+          },
+          "shipping_mappings": {
+            "type": [null, "array"]
+          }
+        }
+      }
+    }
+  }
+}

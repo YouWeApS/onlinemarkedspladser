@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+require_relative './lib/cdon'
+
+import 'lib/tasks/sync.rake'
+
+desc 'Start application locally'
+task :start do
+  system 'bundle exec foreman start -f Procfile.dev'
+end

@@ -1,0 +1,57 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Metrics/LineLength:
+  Max: 120
+  URISchemes:
+    - http
+    - https
+    - ws
+    - wss
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/seeds/**/*'
+    - 'config/routes/*.rb'
+    - 'config/routes.rb'
+
+# Rails standard is compacted module class style
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable

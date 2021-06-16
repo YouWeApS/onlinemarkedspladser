@@ -1,0 +1,27 @@
+en:
+  v1:
+    ui:
+      product_export_mailer:
+        send_link:
+          subject: Product data export ready
+          intro: Here is the link to the product export you requested
+          time_constraint: The link is only active for 48 hours. Please download the file before then.
+
+      product_import_mailer:
+        failed:
+          subject: Product data import failed
+          intro: Product data import of %{file} failed
+          retry: Please correct the errors in the file and try again
+
+        completed:
+          subject: Product data import has completed
+          intro: Product data import of %{file} has completed
+
+      authenticate:
+        new:
+          title: Sign into Project Arctic
+          button: Login
+
+  recover_password_mailer:
+    start_flow:
+      subject: Recover your password

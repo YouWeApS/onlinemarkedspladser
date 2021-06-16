@@ -1,0 +1,26 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "9dcdceadb1ca14375d727a0066cc7f457b1485a5fe47a3baf61b3b44544af46a",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/controllers/v1/vendors/products_controller.rb",
+      "line": 109,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "current_vendor.shadow_products.joins(:product).where(:product => shop.products).where(\"      (\\n        select count(*)\\n        from vendor_product_matches\\n        where vendor_product_matches.product_id = shadow_products.product_id and\\n              vendor_product_matches.vendor_shop_configuration_id = shadow_products.vendor_shop_configuration_id and\\n              vendor_product_matches.matched = true\\n      ) > 0\\n\").where(\"      shadow_products.updated_at > :date or\\n      products.updated_at > :date or\\n      ('#{config.last_synced_at}' = '') is true\\n\", :date => vendor_shop_configuration.last_synced_at)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "V1::Vendors::ProductsController",
+        "method": "index"
+      },
+      "user_input": "config.last_synced_at",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2019-02-14 14:17:48 +0100",
+  "brakeman_version": "4.3.1"
+}

@@ -1,0 +1,36 @@
+// Text color helpers
+.text-warning {
+  color: $warning-color;
+}
+
+.text-error {
+  color: $alert-color;
+}
+
+.text-success {
+  color: $success-color;
+}
+
+// Text selection helpers
+.click-select-all {
+  -webkit-user-select: all;  /* Chrome 49+ */
+  -moz-user-select: all;     /* Firefox 43+ */
+  -ms-user-select: all;      /* No support yet */
+  user-select: all;          /* Likely future */
+}
+
+small {
+  // Override time-ago component text size it shouldn't be smaller than the
+  // small tag.
+  .vue-moments-ago {
+    font-size: inherit !important;
+  }
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

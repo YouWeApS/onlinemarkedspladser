@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/sites/26/countries?active=true&limit=100&notHidden=true&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Mar 2019 13:07:29 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 195.249.116.230
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpdGVtcyI6W3siY29kZSI6IkRLIiwiaWQiOjIzOTcsIm5hbWUiOiJEYW5tYXJrIiwic2l0ZUlkIjoyNiwiYWN0aXZlIjp0cnVlLCJ2YXQiOiIyNSIsInNvcnRPcmRlciI6MH0seyJjb2RlIjoiRk8iLCJpZCI6MjQxMCwibmFtZSI6IkbDpnLDuGVybmUiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo3fSx7ImNvZGUiOiJGSSIsImlkIjoyNDEyLCJuYW1lIjoiRmlubGFuZCIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjF9LHsiY29kZSI6IkZSIiwiaWQiOjI0MTMsIm5hbWUiOiJGcmFua3JpZyIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjJ9LHsiY29kZSI6IkRFIiwiaWQiOjI0MTksIm5hbWUiOiJUeXNrbGFuZCIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjR9LHsiY29kZSI6IklTIiwiaWQiOjI0MzYsIm5hbWUiOiJJc2xhbmQiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo2fSx7ImNvZGUiOiJOTyIsImlkIjoyNDk3LCJuYW1lIjoiTm9yZ2UiLCJzaXRlSWQiOjI2LCJhY3RpdmUiOnRydWUsInZhdCI6IjI1Iiwic29ydE9yZGVyIjo1fSx7ImNvZGUiOiJTRSIsImlkIjoyNTQwLCJuYW1lIjoiU3ZlcmlnZSIsInNpdGVJZCI6MjYsImFjdGl2ZSI6dHJ1ZSwidmF0IjoiMjUiLCJzb3J0T3JkZXIiOjN9XSwiaGFzTW9yZSI6ZmFsc2UsImNvdW50Ijo4LCJjb3JyZWxhdGlvbklkIjoiNWYyMDA2YTMtNmQ4Ny00YmFjLWIxOTEtNzMwZWIzNzU2OTFiIn0=
+    http_version: 
+  recorded_at: Wed, 20 Mar 2019 13:07:30 GMT
+recorded_with: VCR 4.0.0

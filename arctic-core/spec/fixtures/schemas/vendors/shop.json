@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "collected_at": {
+      "type": ["string", null]
+    },
+    "auth_config": {
+      "type": "object"
+    },
+    "config": {
+      "type": "object"
+    },
+    "product_parse_config": {
+      "type": [null, "array"]
+    },
+    "shipping_mappings": {
+      "type": [null, "array"]
+    }
+  }
+}

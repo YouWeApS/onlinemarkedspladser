@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "minItems": 1,
+  "properties": {
+    "billing_address": {
+      "type": "object"
+    },
+
+    "shipping_address": {
+      "type": "object"
+    },
+
+    "total": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "total_without_vat": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "shipping_fee": {
+      "type": "string"
+    },
+
+    "payment_fee": {
+      "type": "string"
+    },
+
+    "shipping_carrier": {
+      "type": ["string", null]
+    },
+
+    "shipping_method": {
+      "type": ["string", null]
+    },
+
+    "vat": {
+      "type": "number"
+    },
+
+    "id": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "order_id": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "purchased_at": {
+      "type": "string",
+      "format": "datetime"
+    },
+
+    "status": {
+      "type": "array"
+    },
+
+    "track_and_trace_reference": {
+      "type": "array"
+    },
+
+    "updated_at": {
+      "type": "string"
+    },
+
+    "order_lines": {
+      "type": "array"
+    },
+
+    "payment_reference": {
+      "type": ["string", null]
+    },
+
+    "receipt_id": {
+      "type": [null, "string"]
+    }
+  }
+}

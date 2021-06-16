@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cdon_shopping_mall_import
+  source_id="xxx"
+  xmlns="http://schemas.cdon.com/product/2.0/shopping-mall.xsd"
+  version="1"
+  import_id="2"
+  import_type="FULL"
+  import_date="2018-11-05T12:40:00"
+  import_previous_id="2">
+  <documents>
+    <products>
+      <product id="abcdef123">
+        <class id="Sneaker" />
+        <gtin value="abcdef123" />
+        <manufacturerArtNo value="G64774" />
+        <values>
+          <attribute id="TITLE">
+            <value>Original Beckenbauer</value>
+          </attribute>
+        </values>
+        <productStatus>
+          <status>ONLINE</status>
+          <exposeStatus>BUYABLE</exposeStatus>
+          <inStock>16</inStock>
+        </productStatus>
+        <salesChannels>
+          <channel iso="se">
+            <price current="599.00" ordinary="650.00" vat="25.00" currency="SEK"/>
+            <sellable>true</sellable>
+          </channel>
+        </salesChannels>
+      </product>
+    </products>
+  </documents>
+</cdon_shopping_mall_import>

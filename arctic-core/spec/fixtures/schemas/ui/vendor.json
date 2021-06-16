@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "required": [ "id", "name" ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "enabled": {
+      "type": "boolean"
+    },
+
+    "name": {
+      "type": "string",
+      "format": "presence"
+    },
+
+    "type": {
+      "type": [null, "string"]
+    },
+
+    "last_synced_at": {
+      "type": [null, "string"],
+      "format": "datetime"
+    },
+
+    "channel": {
+      "type": "object"
+    },
+
+    "config": {
+      "type": "object"
+    },
+
+    "webhooks": {
+      "type": "object"
+    }
+  }
+}

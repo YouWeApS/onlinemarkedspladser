@@ -1,0 +1,26 @@
+# frozen_string_literal: true
+
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require_relative 'config/application'
+require 'seedbank'
+
+Seedbank.load_tasks if defined?(Seedbank)
+
+Rails.application.load_tasks
+
+namespace :db do
+  namespace :connections do
+    desc 'Kill connections'
+    task kill: :environment do
+      ActiveRecord::Base.connection.execute <<~SQL
+        SELECT pg_terminate_backend( pid )
+        FROM pg_stat_activity
+        WHERE pid <> pg_backend_pid( )
+        AND datname = current_database( );
+      SQL
+    end
+  end
+  task drop: %i[db:connections:kill]
+end

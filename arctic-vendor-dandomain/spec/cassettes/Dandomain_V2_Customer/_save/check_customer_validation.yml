@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/customers?email=wrmqqxtlynjf6kg@marketplace.amazon.es&limit=100&notHidden=true&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 25 Mar 2019 10:30:02 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 87.72.32.198
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '109'
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[],"hasMore":false,"count":0,"correlationId":"878c010b-c709-4257-9f18-3faedd5fcad7"}'
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 10:30:03 GMT
+- request:
+    method: get
+    uri: http://yourtestshop.webshop8.dk/admin/WEBAPI/v2/sites/26/shipping-methods/48/countries?limit=100&notHidden=true&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic Ojg5ZjE3Yzg5LTIzODYtNDg2MC05NmQzLWJmMTEwMTUyODA4Mg==
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 25 Mar 2019 10:30:02 GMT
+      X-Backendserver:
+      - shopclu1web21_danhosting_dk
+      X-Forwarded-For:
+      - 87.72.32.198
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish-v4
+      X-Cache:
+      - MISS
+      Content-Length:
+      - '290'
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpdGVtcyI6W3siaWQiOjIzOTcsImNvZGUiOiJESyIsIm5hbWUiOiJEYW5tYXJrIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjowfSx7ImlkIjoyNDEwLCJjb2RlIjoiRk8iLCJuYW1lIjoiRsOmcsO4ZXJuZSIsInZhdFBlcmNlbnRhZ2UiOjI1LjAsImNvbXBhbnlWYXRQZXJjZW50YWdlIjowLjAsInNvcnRPcmRlciI6N30seyJpZCI6MjQxMiwiY29kZSI6IkZJIiwibmFtZSI6IkZpbmxhbmQiLCJ2YXRQZXJjZW50YWdlIjoyNS4wLCJjb21wYW55VmF0UGVyY2VudGFnZSI6MC4wLCJzb3J0T3JkZXIiOjF9LHsiaWQiOjI0MTMsImNvZGUiOiJGUiIsIm5hbWUiOiJGcmFua3JpZyIsInZhdFBlcmNlbnRhZ2UiOjI1LjAsImNvbXBhbnlWYXRQZXJjZW50YWdlIjowLjAsInNvcnRPcmRlciI6Mn0seyJpZCI6MjQxOSwiY29kZSI6IkRFIiwibmFtZSI6IlR5c2tsYW5kIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjo0fSx7ImlkIjoyNDM2LCJjb2RlIjoiSVMiLCJuYW1lIjoiSXNsYW5kIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjo2fSx7ImlkIjoyNDk3LCJjb2RlIjoiTk8iLCJuYW1lIjoiTm9yZ2UiLCJ2YXRQZXJjZW50YWdlIjoyNS4wLCJjb21wYW55VmF0UGVyY2VudGFnZSI6MC4wLCJzb3J0T3JkZXIiOjV9LHsiaWQiOjI1NDAsImNvZGUiOiJTRSIsIm5hbWUiOiJTdmVyaWdlIiwidmF0UGVyY2VudGFnZSI6MjUuMCwiY29tcGFueVZhdFBlcmNlbnRhZ2UiOjAuMCwic29ydE9yZGVyIjozfV0sImhhc01vcmUiOmZhbHNlLCJjb3VudCI6OCwiY29ycmVsYXRpb25JZCI6IjU1MDQ0MjFhLWIxZjEtNDhiNy1iMDgyLWRjOWQ5ODZhNzIyOCJ9
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 10:30:03 GMT
+recorded_with: VCR 4.0.0

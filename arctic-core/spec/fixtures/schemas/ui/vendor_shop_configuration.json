@@ -1,0 +1,44 @@
+{
+  "type": "object",
+
+  "required": [ "id", "auth_config", "config" ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "auth_config": {
+      "type": "object"
+    },
+
+    "config": {
+      "type": "object"
+    },
+
+    "price_adjustment_type": {
+      "type": [null, "string"]
+    },
+
+    "price_adjustment_value": {
+      "type": [null, "string"]
+    },
+
+    "product_parse_config": {
+      "type": [null, "array"]
+    },
+
+    "currency_config": {
+      "type": "object"
+    },
+
+    "webhooks": {
+      "type": "object"
+    },
+
+    "shipping_mappings": {
+      "type": ["string", null]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+cd /home/vendor/apps/vendor/current && bundle exec rake validation_api:start

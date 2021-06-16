@@ -1,0 +1,36 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.7.0'
+
+gem 'activesupport'
+gem 'dotenv'
+gem 'faraday'
+gem 'faraday-detailed_logger'
+gem 'log_formatter'
+gem 'rollbar'
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+gem 'whenever'
+gem 'rack-console'
+
+gem 'arctic-vendor', '~> 2.5', path: 'my_path'
+
+# Deployment
+gem 'capistrano',         require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm',     require: false
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'foreman'
+  gem 'pry'
+  gem 'pry-byebug'
+end
+
+group :test do
+  gem 'rspec-its'
+  gem 'simplecov', require: false
+end

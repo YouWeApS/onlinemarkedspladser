@@ -1,0 +1,55 @@
+{
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "decimal_mark",
+      "iso_code",
+      "thousands_separator",
+      "symbol_first",
+      "example",
+      "symbol"
+    ],
+
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "name": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "decimal_mark": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "iso_code": {
+        "type": "string",
+        "format": "presence"
+      },
+
+      "thousands_separator": {
+        "type": [null, "string"]
+      },
+
+      "symbol_first": {
+        "type": "boolean"
+      },
+
+      "example": {
+        "type": "string"
+      },
+
+      "symbol": {
+        "type": [null, "string"]
+      }
+    }
+  }
+}

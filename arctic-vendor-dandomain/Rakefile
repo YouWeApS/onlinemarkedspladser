@@ -1,0 +1,108 @@
+require_relative "./lib/dandomain"
+
+desc "Start developer application"
+task :start do
+  system "bundle exec foreman start -f Procfile.dev"
+end
+
+namespace :sync do
+  task all: %i[v2:all]
+
+  namespace :v2 do
+    task all: %i[products:all orders:all orders_t_t:update_order]
+
+    namespace :orders do
+      task all: %i[disperse]
+
+      desc "Disperse orders from Core API -> Marketplace"
+      task :disperse do
+        Arctic.logger.info "Starting order dispersal cycle"
+
+        core_api = Arctic::Vendor::Collection::API.new
+
+        # Create orders in Marketplace
+        core_api.list_shops(:collection) do |shop|
+          shop_id = shop.fetch 'id'
+
+          last_synced_at = core_api.last_synced_at shop_id, :orders
+
+          dd_api = Dandomain::V2::API.new shop
+
+          shipping_mappings = core_api.get_shipping_mappings_for_shop(shop_id)
+
+          core_api.orders(shop_id, since: last_synced_at).each do |order|
+            begin
+              customer = Dandomain::V2::Customer.new shop, order, shipping_mappings
+              next unless customer.country_valid?
+
+              customer.save
+
+              # Save the order to Dandomain
+              order = Dandomain::V2::Order.new shop, customer, order, shipping_mappings
+              order.save
+            rescue => e
+              Arctic.logger.error "Unable to send order to DD (#{e.class}): #{e.message}"
+              Arctic.logger.error "Order: #{order}"
+            end
+          end
+
+          core_api.synced shop_id, :orders
+        end
+      end
+    end
+
+    namespace :orders_t_t do
+      task :update_order do
+        core_api = Arctic::Vendor::Collection::API.new
+        core_api.list_shops(:collection) do |shop|
+          shop_id = shop.fetch 'id'
+          dd_api = Dandomain::V2::API.new shop
+          dd_api.orders(startLastModified: (DateTime.now - 7.days)) do |order|
+            begin
+              core_api.update_order shop_id, {
+                id: order['id'],
+                receipt_id: order['id'],
+                order_id: order['referenceNumber'],
+                track_and_trace_reference: order['trackNumber']
+              } if order.present?
+            rescue => e
+              Arctic.logger.debug "Unable to update orders T&T (#{e.class}): #{e.message}"
+            end
+          end
+        end
+      end
+    end
+
+    namespace :products do
+      task all: %i[update collect disperse]
+
+      desc 'Make products updated and ready for sync'
+      task :update do
+        core_api = Arctic::Vendor::API.new
+
+        core_api.list_shops(:collection) do |shop|
+          shop_id = shop.fetch 'id'
+          dd_api = Dandomain::V2::API.new shop
+          core_api.ready_for_update_products(shop_id).each do |product_sku|
+            unless product_sku &&['original_sku'].empty?
+              dd_product = dd_api.lookup_product(product_sku['original_sku'], true)
+              dd_api.update_product(product_sku['original_sku'], {pictureLink: dd_product['pictureLink']}, true) if dd_product
+            end
+          end
+        end
+      end
+
+      desc 'Disperse products from Core API -> Marketplace'
+      task :disperse do
+      end
+
+      desc 'Collect products from Marketplace -> Core API'
+      task :collect do
+        Arctic::Vendor::Collection::API.new.list_shops(:collection) do |shop|
+          jid = Dandomain::V2::Workers::Products::CollectionWorker.perform_async shop.fetch('id')
+          Arctic.logger.info "JID: #{jid}"
+        end
+      end
+    end
+  end
+end

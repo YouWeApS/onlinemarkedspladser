@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<cdon_shopping_mall_import xmlns="http://schemas.cdon.com/product/2.0/shopping-mall.xsd" source_id="xxx" version="1" import_id="2" import_type="FULL" import_date="2018-12-21T13:33:48" import_previous_id="1">
+  <documents>
+    <products>
+      <product id="abcdef123">
+        <class id="Sneaker"/>
+        <class id="Clothing"/>
+        <gtin value="abcdef123"/>
+        <manufacturerArtNo value="d53a744761b6"/>
+        <values>
+          <attribute id="TITLE">
+            <value>Product 1</value>
+          </attribute>
+          <attribute id="DESCRIPTION">
+            <value>Proudct description</value>
+          </attribute>
+          <variations>
+            <key attribute="Color"/>
+          </variations>
+        </values>
+        <productStatus>
+          <status>ONLINE</status>
+          <exposeStatus>BUYABLE</exposeStatus>
+          <inStock>1</inStock>
+        </productStatus>
+        <salesChannels>
+          <channel iso="SE">
+            <price current="65.21" vat="25.0" ordinary="14.57" currency="DKK"/>
+            <sellable>false</sellable>
+          </channel>
+        </salesChannels>
+      </product>
+      <product id="hijklm456">
+        <class id="Sneaker"/>
+        <class id="Clothing"/>
+        <gtin value="hijklm456"/>
+        <manufacturerArtNo value="a15b47de7f62"/>
+        <values>
+          <attribute id="TITLE">
+            <value>Product 2</value>
+          </attribute>
+          <attribute id="DESCRIPTION">
+            <value>Proudct description</value>
+          </attribute>
+          <variations>
+            <key attribute="Color">
+              <variation value=""/>
+            </key>
+          </variations>
+        </values>
+        <productStatus>
+          <status>ONLINE</status>
+          <exposeStatus>BUYABLE</exposeStatus>
+          <inStock>1</inStock>
+        </productStatus>
+        <productVariations>
+          <sku id="hijklm457">
+            <status>ONLINE</status>
+            <exposeStatus>BUYABLE</exposeStatus>
+            <inStock>1</inStock>
+            <manufacturerArtNo value="d8fc5ee4fe40"/>
+            <variation key="Color" value=""/>
+            <salesChannels>
+              <channel iso="SE">
+                <price current="65.21" ordinary="14.57" currency="DKK" vat="25.0"/>
+                <sellable>true</sellable>
+              </channel>
+            </salesChannels>
+          </sku>
+        </productVariations>
+      </product>
+    </products>
+  </documents>
+</cdon_shopping_mall_import>

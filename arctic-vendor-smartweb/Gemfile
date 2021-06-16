@@ -1,0 +1,47 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.7.0'
+
+gem 'activesupport'
+gem 'dotenv'
+gem 'faraday'
+gem 'faraday-detailed_logger'
+gem 'hashie'
+gem 'log_formatter'
+gem 'rollbar'
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+gem 'whenever'
+gem 'rack-console'
+gem 'savon', '~> 2.12.0'
+
+gem 'arctic-vendor', '~> 2.5', path: 'my_path'
+
+# Deployment
+gem 'capistrano',         require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
+
+group :development, :test do
+  gem 'guard-rspec'
+  gem 'rspec'
+  gem 'foreman'
+  gem 'rerun'
+  gem 'guard-rubocop'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'bundler-audit', require: false
+end
+
+group :test do
+  gem 'vcr'
+  gem 'rspec-sidekiq'
+  gem 'webmock'
+  gem 'devnull'
+  gem 'timecop'
+  gem 'rspec-its'
+  gem 'simplecov', :require => false
+end

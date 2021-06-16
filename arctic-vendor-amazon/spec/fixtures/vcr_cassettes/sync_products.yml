@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/v1/vendors/shops
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"79cc53cd210e8e88d367449bee85768c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cf6d3596-4df3-4358-b9cc-47784da78e71
+      X-Runtime:
+      - '0.067755'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"collection":[],"dispersal":[{"id":"a70b65e9-8ab5-4d1f-a4db-22eede34a276","auth_config":{"merchant_id":"A2IZEMSP8MNSVK","auth_token":"amzn.mws.e4b41780-4aab-f06c-f2c8-a26fa022ba46"},"collected_at":null,"config":{},"product_parse_config":{}}]}'
+    http_version:
+  recorded_at: Thu, 07 Feb 2019 08:36:27 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/v1/vendors/shops/a70b65e9-8ab5-4d1f-a4db-22eede34a276/products
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"aa6f950200e7a7617c9e89ec6ffb0fdc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8eee337e-7683-4a71-9ab2-21bc79ae737f
+      X-Runtime:
+      - '0.351202'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version:
+  recorded_at: Thu, 07 Feb 2019 08:36:27 GMT
+recorded_with: VCR 4.0.0

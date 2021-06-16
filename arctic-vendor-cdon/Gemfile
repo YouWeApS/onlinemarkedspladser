@@ -1,0 +1,48 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.5.1'
+
+gem 'activesupport', require: 'active_support/all'
+gem 'bcrypt_pbkdf'
+gem 'dotenv'
+gem 'ed25519'
+gem 'faraday'
+gem 'faraday_curl'
+gem 'hashie'
+gem 'multipart-post'
+gem 'nokogiri'
+gem 'rake'
+gem 'rollbar'
+gem 'whenever'
+
+gem 'arctic-vendor', path: 'my_path'
+
+gem 'cdon_feed_validator', path: 'my_path'
+
+group :test, :development do
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop'
+  gem 'rspec'
+  gem 'rubocop'
+end
+
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'foreman'
+  gem 'rerun'
+end
+
+group :test do
+  gem 'devnull'
+  gem 'rspec-its', require: 'rspec/its'
+  gem 'rspec-sidekiq'
+  gem 'rspec_junit_formatter'
+  gem 'timecop'
+  gem 'vcr'
+  gem 'webmock'
+end

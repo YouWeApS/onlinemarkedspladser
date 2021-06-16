@@ -1,0 +1,8 @@
+:concurrency: 25
+:logfile: log/sidekiq.log
+:queues:
+  - [products_collection, 10]
+  - [orders_disperse, 10]
+  - [orders_collection, 10]
+  - [categories_collection, 1]
+  - default

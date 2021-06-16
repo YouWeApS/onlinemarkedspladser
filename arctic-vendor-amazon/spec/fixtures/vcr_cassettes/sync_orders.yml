@@ -1,0 +1,194 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/v1/vendors/shops
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f9587de75e0e4af7cf3b93df799937f2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1680aa3f-1a73-418c-96e3-4c0dfc4783c6
+      X-Runtime:
+      - '0.023869'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"collection":[],"dispersal":[{"id":"7a62bab2-3ded-4f68-a976-2b97b9477837","auth_config":{"merchant_id":"A2IZEMSP8MNSVK","auth_token":"amzn.mws.e4b41780-4aab-f06c-f2c8-a26fa022ba46"},"collected_at":null,"config":{},"product_parse_config":null}]}'
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 10:35:54 GMT
+- request:
+    method: post
+    uri: https://mws-eu.amazonservices.com/Orders/2013-09-01
+    body:
+      encoding: UTF-8
+      string: AWSAccessKeyId=AKIAJUH6REBLATEU6R2A&Action=ListOrders&LastUpdatedAfter=2019-03-04T11%3A35%3A54%2B01%3A00&MWSAuthToken=amzn.mws.e4b41780-4aab-f06c-f2c8-a26fa022ba46&MarketplaceId.Id.1=A1PA6795UKMFR9&SellerId=A2IZEMSP8MNSVK&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-03-11T10%3A35%3A54Z&Version=2013-09-01&Signature=HRvx1N2WY1kX6XFe%2BSMOtxo8R%2FimwDX7aVl6oZGzmwk%3D
+    headers:
+      User-Agent:
+      - Jeff/2.0.0 (Language=Ruby; Aegir.local)
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=UTF-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Mon, 11 Mar 2019 10:35:55 GMT
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '354'
+      Connection:
+      - keep-alive
+      X-Amz-Date:
+      - Mon, 11 Mar 2019 10:35:55 GMT
+      X-Amzn-Authorization:
+      - AAA identity=com.amazon.aaa.MarketplaceWebServiceOrders.AndromedaControlService.amzn1.aaa.id.lwigtwr3h4inoeknjer76q4tl4.Default/1,
+        Operation=ListOrders, Service=MarketplaceWebServiceOrders, Encrypted=false,
+        SignedHeaders=X-Amz-Date, Algorithm=HmacSHA256, Signed=true, Signature=66YVrush2LPl0g/wvrjg2oOBQ5D0kecAq8condTpQak=,RelationshipVersion=0
+      X-Mws-Request-Id:
+      - d610b958-65c5-45f3-af0b-dd66bf1bd380
+      X-Mws-Timestamp:
+      - '2019-03-11T10:35:55.063Z'
+      X-Mws-Response-Context:
+      - hmhopra0DFIcsTw8yX8u904/Tmu57souCEbbAXoqnw8f6HUwSCK75sb2i3j8Sl0F0jeqo2m8hmk=
+      X-Amz-Rid:
+      - ZTS5846KFWWE3WJ9FN9K
+      Vary:
+      - Accept-Encoding,X-Amzn-CDN-Cache,User-Agent
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ListOrdersResponse xmlns="https://mws.amazonservices.com/Orders/2013-09-01">
+          <ListOrdersResult>
+            <Orders/>
+            <LastUpdatedBefore>2019-03-11T10:33:55.135Z</LastUpdatedBefore>
+          </ListOrdersResult>
+          <ResponseMetadata>
+            <RequestId>d610b958-65c5-45f3-af0b-dd66bf1bd380</RequestId>
+          </ResponseMetadata>
+        </ListOrdersResponse>
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 10:35:55 GMT
+- request:
+    method: patch
+    uri: http://localhost:5000/v1/vendors/shops/7a62bab2-3ded-4f68-a976-2b97b9477837/orders_synced
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Content-Length:
+      - '0'
+      Expect:
+      - ''
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 554e2a76-6132-4a4f-b719-2a1cb898c597
+      X-Runtime:
+      - '0.112459'
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 10:35:55 GMT
+recorded_with: VCR 4.0.0
+- request:
+    method: get
+    uri: http://localhost:5000/v1/vendors/shops/7a62bab2-3ded-4f68-a976-2b97b9477837
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Arctic-Vendor v1.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic M2RmYWI5Y2QtOWU3Yi00MjJiLWE0YzAtNjFkZjMxODU1MDFlOjMyM2EwNDEyLTIyMGEtNDU5My1iZmU3LWQ1ODQyYmZhMTBkMQ==
+      Content-Length:
+      - '0'
+      Expect:
+      - ''
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Per-Page:
+      - '20'
+      Page:
+      - '1'
+      Total:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 554e2a76-6132-4a4f-b719-2a1cb898c597
+      X-Runtime:
+      - '0.112459'
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 10:35:55 GMT
+recorded_with: VCR 4.0.0
